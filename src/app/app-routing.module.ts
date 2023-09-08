@@ -15,6 +15,10 @@ const routes: Routes = [
     path: 'portada',
     loadChildren: () => import('./portada/portada.module').then( m => m.PortadaPageModule)
   },
+  {
+    path: 'selccresm',
+    loadChildren: () => import('./selccresm/selccresm.module').then( m => m.SelccresmPageModule)
+  },
 ];
 
 @NgModule({
