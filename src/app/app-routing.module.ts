@@ -19,6 +19,10 @@ const routes: Routes = [
     path: 'selccresm',
     loadChildren: () => import('./selccresm/selccresm.module').then( m => m.SelccresmPageModule)
   },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
 ];
 
 @NgModule({
