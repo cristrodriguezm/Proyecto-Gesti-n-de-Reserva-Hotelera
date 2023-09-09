@@ -73,6 +73,14 @@ ion-row#seleccionResumenBotones ion-button {
     margin: auto;
     
 }
+ion-row#seleccionResumenBotones ion-button.primarioBoton {
+    --background-activated: #E7D0C6;
+    --background-focused: #E7D0C6;
+    --background: #694f44;
+    --background-hover: #694f44;
+    --color: #E7D0C6;
+}
+
 ion-row#reservaPie > ion-img {
     max-width: 377px;
     margin: 89px auto 0 auto;
