@@ -54,6 +54,14 @@ ion-row#sesionInicioBotones ion-button {
     margin: 1em auto;
 }
 
+ion-row#sesionInicioBotones ion-button.primarioBoton {
+    --background-activated: #E7D0C6;
+    --background-focused: #E7D0C6;
+    --background: #694f44;
+    --background-hover: #694f44;
+    --color: #E7D0C6;
+}
+
 ion-row#sesionInicioPie > ion-img {
     max-width: 377px;
     margin: 89px auto 0 auto;
