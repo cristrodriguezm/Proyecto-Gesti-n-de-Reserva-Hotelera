@@ -59,7 +59,7 @@ ion-row#seleccionResumenLista ol li p {
 }
 
 
-ion-row#seleccionResumenBotones ion-button {
+ion-row.seleccionResumenBotones ion-button {
     --background: #E7D0C6;
     --background-hover: #fff;
     --background-activated: #694f44;
@@ -73,7 +73,7 @@ ion-row#seleccionResumenBotones ion-button {
     margin: auto;
     
 }
-ion-row#seleccionResumenBotones ion-button.primarioBoton {
+ion-row.seleccionResumenBotones ion-button.primarioBoton {
     --background-activated: #E7D0C6;
     --background-focused: #E7D0C6;
     --background: #694f44;

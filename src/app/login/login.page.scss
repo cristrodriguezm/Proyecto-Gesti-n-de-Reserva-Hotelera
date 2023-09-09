@@ -40,7 +40,7 @@ ion-row#sesionInicioTitulo ion-title.title-large {
 
 
 
-ion-row#sesionInicioBotones ion-button {
+ion-row.sesionInicioBotones ion-button {
     --background: #E7D0C6;
     --background-hover: #fff;
     --background-activated: #694f44;
@@ -54,7 +54,7 @@ ion-row#sesionInicioBotones ion-button {
     margin: 1em auto;
 }
 
-ion-row#sesionInicioBotones ion-button.primarioBoton {
+ion-row.sesionInicioBotones ion-button.primarioBoton {
     --background-activated: #E7D0C6;
     --background-focused: #E7D0C6;
     --background: #694f44;
