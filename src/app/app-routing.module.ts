@@ -63,6 +63,14 @@ const routes: Routes = [
     path: 'infrgenerador',
     loadChildren: () => import('./infrgenerador/infrgenerador.module').then( m => m.InfrgeneradorPageModule)
   },
+  {
+    path: 'clientcuentas',
+    loadChildren: () => import('./clientcuentas/clientcuentas.module').then( m => m.ClientcuentasPageModule)
+  },
+  {
+    path: 'nuevempleadocuenta',
+    loadChildren: () => import('./nuevempleadocuenta/nuevempleadocuenta.module').then( m => m.NuevempleadocuentaPageModule)
+  },
 ];
 
 @NgModule({
