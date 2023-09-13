@@ -43,6 +43,26 @@ const routes: Routes = [
     path: 'pagoresumen',
     loadChildren: () => import('./pagoresumen/pagoresumen.module').then( m => m.PagoresumenPageModule)
   },
+  {
+    path: 'hotel-admn',
+    loadChildren: () => import('./hotel-admn/hotel-admn.module').then( m => m.HotelAdmnPageModule)
+  },
+  {
+    path: 'habitsgestor',
+    loadChildren: () => import('./habitsgestor/habitsgestor.module').then( m => m.HabitsgestorPageModule)
+  },
+  {
+    path: 'turstahabitsgestor',
+    loadChildren: () => import('./turstahabitsgestor/turstahabitsgestor.module').then( m => m.TurstahabitsgestorPageModule)
+  },
+  {
+    path: 'premumhabitsgestor',
+    loadChildren: () => import('./premumhabitsgestor/premumhabitsgestor.module').then( m => m.PremumhabitsgestorPageModule)
+  },
+  {
+    path: 'infrgenerador',
+    loadChildren: () => import('./infrgenerador/infrgenerador.module').then( m => m.InfrgeneradorPageModule)
+  },
 ];
 
 @NgModule({

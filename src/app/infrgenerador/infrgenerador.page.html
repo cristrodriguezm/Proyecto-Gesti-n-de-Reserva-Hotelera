@@ -1,0 +1,46 @@
+
+<ion-content [fullscreen]="true">
+
+  <ion-grid  class="ion-padding">
+    <ion-row id="informesGeneradorTitulo" class="ion-text-center marginbottom">
+      <h1 class="topTitle">Generador de <wbr/>resportes de <wbr/>reservas</h1>
+    </ion-row>
+
+    <ion-row class="informesGeneradorFecha a ion-text-center panelBoton">
+      <ion-title >Desde</ion-title>
+    </ion-row>
+
+    <ion-row class="informesGeneradorFecha b ion-text-center panelBoton">
+        <ion-datetime-button datetime="datetime"></ion-datetime-button>
+        <ion-modal [keepContentsMounted]="true">
+          <ng-template>
+            <ion-datetime id="datetime"></ion-datetime>
+          </ng-template>
+        </ion-modal>
+    </ion-row>
+
+    <ion-row class="informesGeneradorFecha a ion-text-center panelBoton">
+      <ion-title >Hasta</ion-title>
+    </ion-row>
+  
+    <ion-row class="informesGeneradorFecha b ion-text-center panelBoton marginbottom">
+      <ion-datetime-button datetime="datetime"></ion-datetime-button>
+      <ion-modal [keepContentsMounted]="true">
+        <ng-template>
+          <ion-datetime id="datetime"></ion-datetime>
+        </ng-template>
+      </ion-modal>
+    </ion-row>
+
+    <ion-row class="informesGeneradorBotones">
+      <ion-button size="large" class="primarioBoton">Volver</ion-button>
+    </ion-row>
+
+    <ion-row id="informesGeneradorPie" class="ion-text-center">
+      <ion-img src="../../assets/images/pacific reef titulo .png" alt="Hotel Título" ionImgDidLoad ></ion-img>
+    </ion-row>
+  
+  </ion-grid>
+
+</ion-content>
+  

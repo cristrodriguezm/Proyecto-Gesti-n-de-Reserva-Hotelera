@@ -11,7 +11,6 @@ ion-content {
     background: url('../../assets/images/background_a.png') center center no-repeat;
     background-size: cover;
     font-family: Arial, Helvetica, sans-serif;
-    color:#000
 }
 
 ion-content ion-grid {
@@ -19,55 +18,23 @@ ion-content ion-grid {
     max-width: 987px;
 }
 
-ion-row#pagoResumenTitulo {
+ion-row#hotelAdmnTitulo {
     padding: 0.5em 0;
 }
-ion-row#pagoResumenTitulo h1.topTitle {
+ion-row#hotelAdmnTitulo h1.topTitle {
     color: #694f44;
     font-size: 39px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-style: italic;
     font-weight: bold;
-    letter-spacing: initial;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
 }
 
-
-ion-row#pagoResumenLista ol {
-border-top: 1px solid #694f44;
-}
-ion-row#pagoResumenLista ol,
-ion-row#pagoResumenLista li {
-    list-style: none;
-    margin: auto;
-    padding: 0;
-    width: 100%;
-}
-ion-row#pagoResumenLista h3 {
-    font-size: 34px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    color: #694f44;
-}
-ion-row#pagoResumenLista ol li p {
-    line-height: 1.5em;
-      color: #694f44;
-      font-size: 21px;
-      font-family: Arial, Helvetica, sans-serif;
-      font-weight: normal;
-      padding: 1em;
-      border-bottom: 1px solid #694f44;
-      margin: 0;
-      background-color: rgba(255, 255, 255, 0.4);
-}
-
-
-
-ion-row#pagoResumenBotones ion-button {
+ion-row.hotelAdmnBotones ion-button {
     --background: #E7D0C6;
-    --background-hover: #E7D0C6;
+    --background-hover: #fff;
     --background-activated: #694f44;
     --background-focused: #694f44;
     --box-shadow: 0 13px 34px 8px rgba(0, 0, 0, 0.2), 0 3px 8px 2px rgba(0, 0, 0, 0.3);
@@ -76,10 +43,13 @@ ion-row#pagoResumenBotones ion-button {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 21px;
     font-weight: bold;
-    margin: auto;
+    margin: 1em auto;
+}
+ion-row.panelBoton ion-button {
+    min-width: 377px;
 }
 
-ion-row#pagoResumenBotones ion-button.primarioBoton {
+ion-row.hotelAdmnBotones ion-button.primarioBoton {
     --background-activated: #E7D0C6;
     --background-focused: #E7D0C6;
     --background: #694f44;
@@ -87,12 +57,11 @@ ion-row#pagoResumenBotones ion-button.primarioBoton {
     --color: #E7D0C6;
 }
 
-
-ion-row#pagoResumenPie > ion-img {
+ion-row#hotelAdmnPie > ion-img {
     max-width: 377px;
     margin: 89px auto 0 auto;
 }
 
 ion-row.marginbottom {
-    margin-bottom: 4em !important;
+    margin-bottom: 4em;
 }

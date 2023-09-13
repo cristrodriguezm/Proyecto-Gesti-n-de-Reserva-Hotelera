@@ -11,31 +11,33 @@ ion-content {
     background: url('../../assets/images/background_a.png') center center no-repeat;
     background-size: cover;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 89px;
-    color:#000
 }
 
 ion-content ion-grid {
     margin: 55px auto;
     max-width: 987px;
 }
+
 ion-row#sesionInicioTitulo {
     padding: 0.5em 0;
 }
-ion-row#sesionInicioCampo ion-input {
-    color: #000;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 55px;
-    font-weight: normal;
-    margin: 1em auto;
-    border-bottom: 2px solid #694f44;
-}
-ion-row#sesionInicioTitulo ion-title.title-large {
+ion-row#sesionInicioTitulo h1.topTitle {
     color: #694f44;
     font-size: 39px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-style: italic;
     font-weight: bold;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+ion-row.sesionInicioCampo ion-input {
+    color: #000;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 34px;
+    font-weight: normal;
+    margin: 1em auto;
+    border-bottom: 2px solid #694f44;
 }
 
 
@@ -65,4 +67,8 @@ ion-row.sesionInicioBotones ion-button.primarioBoton {
 ion-row#sesionInicioPie > ion-img {
     max-width: 377px;
     margin: 89px auto 0 auto;
+}
+
+ion-row.marginbottom {
+    margin-bottom: 4em;
 }
