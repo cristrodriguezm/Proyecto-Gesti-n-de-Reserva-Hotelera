@@ -20,35 +20,36 @@ ion-content ion-grid {
     max-width: 987px;
 }
 
-ion-row#seleccionResumenTitulo {
+ion-row#pagoResumenTitulo {
     padding: 0.5em 0;
 }
-ion-row#seleccionResumenTitulo ion-title.title-large {
+ion-row#pagoResumenTitulo ion-title {
     color: #694f44;
     font-size: 39px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-style: italic;
     font-weight: bold;
+    letter-spacing: initial;
 }
 
 
-ion-row#seleccionResumenLista ol {
-    border-top: 1px solid #694f44;
-    }
-ion-row#seleccionResumenLista ol,
-ion-row#seleccionResumenLista li {
+ion-row#pagoResumenLista ol {
+border-top: 1px solid #694f44;
+}
+ion-row#pagoResumenLista ol,
+ion-row#pagoResumenLista li {
     list-style: none;
     margin: auto;
     padding: 0;
     width: 100%;
 }
-ion-row#seleccionResumenLista h3 {
+ion-row#pagoResumenLista h3 {
     font-size: 34px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     color: #694f44;
 }
-ion-row#seleccionResumenLista ol li p {
+ion-row#pagoResumenLista ol li p {
     line-height: 1.5em;
       color: #694f44;
       font-size: 21px;
@@ -61,9 +62,10 @@ ion-row#seleccionResumenLista ol li p {
 }
 
 
-ion-row.seleccionResumenBotones ion-button {
+
+ion-row#pagoResumenBotones ion-button {
     --background: #E7D0C6;
-    --background-hover: #fff;
+    --background-hover: #E7D0C6;
     --background-activated: #694f44;
     --background-focused: #694f44;
     --box-shadow: 0 13px 34px 8px rgba(0, 0, 0, 0.2), 0 3px 8px 2px rgba(0, 0, 0, 0.3);
@@ -73,9 +75,9 @@ ion-row.seleccionResumenBotones ion-button {
     font-size: 21px;
     font-weight: bold;
     margin: auto;
-    
 }
-ion-row.seleccionResumenBotones ion-button.primarioBoton {
+
+ion-row#pagoResumenBotones ion-button.primarioBoton {
     --background-activated: #E7D0C6;
     --background-focused: #E7D0C6;
     --background: #694f44;
@@ -83,7 +85,8 @@ ion-row.seleccionResumenBotones ion-button.primarioBoton {
     --color: #E7D0C6;
 }
 
-ion-row#reservaPie > ion-img {
+
+ion-row#pagoResumenPie > ion-img {
     max-width: 377px;
     margin: 89px auto 0 auto;
 }

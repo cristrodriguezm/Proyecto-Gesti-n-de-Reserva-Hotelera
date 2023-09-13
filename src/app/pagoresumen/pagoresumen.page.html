@@ -2,11 +2,11 @@
 <ion-content [fullscreen]="true">
 
   <ion-grid  class="ion-padding">
-    <ion-row id="seleccionResumenTitulo" class="ion-text-center">
-      <ion-title size="large">Resumen de<wbr/> la selección</ion-title>
+    <ion-row id="pagoResumenTitulo" class="ion-text-center">
+      <ion-title>Resumen de<wbr/> la reserva y<wbr/> del pago</ion-title>
     </ion-row>
 
-    <ion-row id="seleccionResumenLista" class="ion-text-center">
+    <ion-row id="pagoResumenLista" class="ion-text-center">
       <ol>
         <li>
           <p>
@@ -28,17 +28,23 @@
             Suma por habitaciones reservadas $ 90.000.
           </p>
         </li>
+        <li>
+          <p>
+            <strong>Pagado con billetera electrónica.</strong>
+          </p>
+        </li>
       </ol>
     </ion-row>
 
-    <ion-row class="seleccionResumenBotones">
-      <ion-col class="ion-padding ion-text-center"><ion-button class="primarioBoton" size="large">Ir a pagar</ion-button></ion-col>
-    </ion-row>
-    <ion-row class="seleccionResumenBotones">
-      <ion-col class="ion-padding ion-text-center"><ion-button size="large">Atrás</ion-button></ion-col>
+    <ion-row id="pagoResumenBotones">
+      <ion-col class="ion-padding ion-text-center"><ion-button size="large">Volver al inicio</ion-button></ion-col>
     </ion-row>
 
-    <ion-row id="reservaPie" class="ion-text-center">
+    <ion-row id="pagoResumenBotones">
+      <ion-col class="ion-padding ion-text-center"><ion-button size="large">Imprimir</ion-button></ion-col>
+    </ion-row>
+
+    <ion-row id="pagoResumenPie" class="ion-text-center">
       <ion-img src="../../assets/images/pacific reef titulo .png" alt="Hotel Título" ionImgDidLoad ></ion-img>
     </ion-row>
   

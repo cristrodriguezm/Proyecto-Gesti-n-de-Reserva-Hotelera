@@ -39,6 +39,10 @@ const routes: Routes = [
     path: 'pagomedioselcc',
     loadChildren: () => import('./pagomedioselcc/pagomedioselcc.module').then( m => m.PagomedioselccPageModule)
   },
+  {
+    path: 'pagoresumen',
+    loadChildren: () => import('./pagoresumen/pagoresumen.module').then( m => m.PagoresumenPageModule)
+  },
 ];
 
 @NgModule({
