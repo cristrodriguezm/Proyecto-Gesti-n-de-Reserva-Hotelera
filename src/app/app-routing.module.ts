@@ -27,6 +27,14 @@ const routes: Routes = [
     path: 'verif',
     loadChildren: () => import('./verif/verif.module').then( m => m.VerifPageModule)
   },
+  {
+    path: 'fechasreserva',
+    loadChildren: () => import('./fechasreserva/fechasreserva.module').then( m => m.FechasreservaPageModule)
+  },
+  {
+    path: 'habitsreserva',
+    loadChildren: () => import('./habitsreserva/habitsreserva.module').then( m => m.HabitsreservaPageModule)
+  },
 ];
 
 @NgModule({
