@@ -35,6 +35,10 @@ const routes: Routes = [
     path: 'habitsreserva',
     loadChildren: () => import('./habitsreserva/habitsreserva.module').then( m => m.HabitsreservaPageModule)
   },
+  {
+    path: 'pagomedioselcc',
+    loadChildren: () => import('./pagomedioselcc/pagomedioselcc.module').then( m => m.PagomedioselccPageModule)
+  },
 ];
 
 @NgModule({

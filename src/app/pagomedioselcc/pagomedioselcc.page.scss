@@ -1,0 +1,66 @@
+
+
+ion-list, ion-text, ion-item, ion-content, p, h1, h2, h3, h4, h5 {
+    --background: none !important;
+}
+
+ion-content {
+    color: #000;
+    background: url('../../assets/images/background_a.png') center center no-repeat;
+    background-size: cover;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 89px;
+    color:#000
+}
+
+ion-content ion-grid {
+    margin: 55px auto;
+    max-width: 987px;
+}
+
+ion-row#pagoMedioTitulo {
+    padding: 0.5em 0;
+}
+
+ion-row#pagoMedioTitulo ion-title.title-large {
+    color: #694f44;
+    font-size: 39px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-weight: bold;
+}
+
+ion-row#pagoMedioMedios ion-item {
+    margin: 21px;
+    padding: 55px 21px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 8px;
+    width: 288px;
+    color: rgba(0, 0, 0, 0.6);
+    box-shadow: 0 13px 34px 8px rgba(0, 0, 0, 0.2), 0 3px 8px 2px rgba(0, 0, 0, 0.3);
+}
+
+ion-row#pagoMedioMedios ion-item:hover {
+    color: rgba(0, 0, 0, 1);
+    background: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 13px 34px 34px rgba(0, 0, 0, 0.2), 0 3px 8px 2px rgba(0, 0, 0, 0.3);
+}
+
+ion-row#pagoMedioMedios > ion-item > ion-img  {
+    margin: auto;
+    padding: 0;
+    margin: 0;
+}
+
+ion-row#pagoMedioMedios > ion-item > ion-title  {
+    margin: auto;
+    padding: 0;
+    margin: 0;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+ion-row#pagoMedioPie > ion-img {
+    max-width: 377px;
+    margin: 89px auto 0 auto;
+}
