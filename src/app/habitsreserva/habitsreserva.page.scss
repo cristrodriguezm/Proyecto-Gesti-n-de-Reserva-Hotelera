@@ -89,3 +89,52 @@ ion-list, ion-text, ion-item, ion-content, p, h1, h2, h3, h4, h5 {
 ion-row.marginbottom {
   margin-bottom: 4em !important;
 }
+
+.disponible {
+  background-color: blue;
+}
+
+.ocupada {
+  background-color: red;
+}
+
+.seleccionada {
+  background-color: green;
+}
+
+.hotel {
+  display: flex;
+  flex-direction: column;
+  border: 3px solid black;
+  width: max-content;
+  margin: 0 auto;
+}
+
+.floor {
+  display: flex;
+  justify-content: center;
+  margin: 0.5em 0;
+}
+
+.room {
+  width: 50px;
+  height: 50px;
+  margin: 0.5em;
+  border: 2px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;  
+}
+
+.disponible {
+  background-color: blue;
+}
+
+.ocupada {
+  background-color: red;
+}
+
+.seleccionada {
+  background-color: green;
+}

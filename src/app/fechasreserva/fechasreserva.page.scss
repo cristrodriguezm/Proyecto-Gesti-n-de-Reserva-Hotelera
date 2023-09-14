@@ -1,10 +1,6 @@
-
-
 ion-list, ion-text, ion-item, ion-content, p, h1, h2, h3, h4, h5 {
     --background: none !important;
 }
-
-
 
 ion-content {
     color: #000;
@@ -21,6 +17,7 @@ ion-content ion-grid {
 ion-row#fechasReservaTitulo {
     padding: 0.5em 0;
 }
+
 ion-row#fechasReservaTitulo h1.topTitle {
     color: #694f44;
     font-size: 39px;
@@ -31,33 +28,6 @@ ion-row#fechasReservaTitulo h1.topTitle {
     margin-left: auto;
     margin-right: auto;
 }
-
-/*
-ion-row#fechasReservaCalendario ol,
-ion-row#fechasReservaCalendario li {
-    list-style: none;
-    margin: auto;
-    padding: 0;
-    width: 100%;
-}
-ion-row#fechasReservaCalendario h3 {
-    font-size: 34px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    color: #694f44;
-}
-ion-row#fechasReservaCalendario ol li p {
-    line-height: 1.5em;
-      color: #694f44;
-      font-size: 21px;
-      font-family: Arial, Helvetica, sans-serif;
-      font-weight: normal;
-      padding: 1em;
-      border-bottom: 1px solid #694f44;
-      margin: 0;
-      background-color: rgba(255, 255, 255, 0.4);
-}
-*/
 
 ion-row.fechasReservaBotones ion-button {
     --background: #E7D0C6;
@@ -71,8 +41,8 @@ ion-row.fechasReservaBotones ion-button {
     font-size: 21px;
     font-weight: bold;
     margin: auto;
-    
 }
+
 ion-row.fechasReservaBotones ion-button.primarioBoton {
     --background-activated: #E7D0C6;
     --background-focused: #E7D0C6;
@@ -88,4 +58,24 @@ ion-row#fechasReservaPie > ion-img {
 
 ion-row.marginbottom {
     margin-bottom: 4em !important;
+}
+
+ion-datetime {
+    display: block;
+    margin: 0 auto 2em;
+    --color: #694f44;
+}
+
+.rango-seleccionado p {
+    display: block;
+    text-align: center;
+    padding: 1.5em;
+    background-color: rgba(224, 224, 224, 0.8);
+    color: #694f44;
+    font-weight: bold;
+    margin: 0.5em auto;
+    width: fit-content;
+    border-radius: 8px;
+    font-size: 21px;
+    font-family: Arial, Helvetica, sans-serif;
 }

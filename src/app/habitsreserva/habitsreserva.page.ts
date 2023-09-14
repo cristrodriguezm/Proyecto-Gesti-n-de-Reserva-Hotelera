@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HotelService } from '../hotel.service';
 
 @Component({
   selector: 'app-habitsreserva',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HabitsreservaPage implements OnInit {
 
-  constructor() { }
+  habitaciones: any = {};
+
+  constructor(private hotelService: HotelService) { }
 
   ngOnInit() {
+    this.habitaciones = this.hotelService.getHabitaciones();
+  }
+
+  seleccionarHabitacion(id: string) {
+    this.hotelService.seleccionarHabitacion(id);
+  }
+
+  getKeyAsString(key: any): string {
+    return key as string;
   }
 
 }

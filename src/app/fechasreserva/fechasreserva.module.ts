@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { FechasreservaPageRoutingModule } from './fechasreserva-routing.module';
 
 import { FechasreservaPage } from './fechasreserva.page';
+import { CalendarioService } from '../calendario.service';
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import { FechasreservaPage } from './fechasreserva.page';
     IonicModule,
     FechasreservaPageRoutingModule
   ],
-  declarations: [FechasreservaPage]
+  declarations: [FechasreservaPage],
+  providers: [CalendarioService]  
 })
 export class FechasreservaPageModule {}

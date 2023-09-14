@@ -8,10 +8,17 @@
 
     <ion-row id="fechasReservaCalendario" class="ion-text-center marginbottom">
 
-      <!--
-        CALENDARIO
-      -->
-
+      <!-- CALENDARIO -->
+      <ion-datetime displayFormat="DD-MM-YYYY" 
+                    [(ngModel)]="fechaSeleccionada" 
+                    (ionChange)="seleccionarFechaRango(fechaSeleccionada)">
+      </ion-datetime>
+    
+      <div class="rango-seleccionado">
+        <p>Fecha inicio: {{ fechaInicioRango ? (fechaInicioRango | date: 'dd-MM-yyyy') : 'No seleccionada' }}</p>
+        <p>Fecha término: {{ fechaFinRango ? (fechaFinRango | date: 'dd-MM-yyyy') : 'No seleccionada' }}</p>
+      </div>
+    
     </ion-row>
 
     <ion-row class="fechasReservaBotones">

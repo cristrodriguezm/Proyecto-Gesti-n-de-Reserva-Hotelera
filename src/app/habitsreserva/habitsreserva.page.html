@@ -1,18 +1,26 @@
-
 <ion-content [fullscreen]="true">
-
   <ion-grid  class="ion-padding">
     <ion-row id="habitacionesReservaTitulo" class="ion-text-center marginbottom">
-      <h1 class="topTitle">Seleccione <wbr/>habitaciones</h1>
+      <h1 class="topTitle">Seleccione habitaciones</h1>
     </ion-row>
-
+    
     <ion-row id="habitacionesReservaCalendario" class="ion-text-center marginbottom">
-      
-      <!--
-        HABITACIONES TABLA
-      -->
-
+      <div class="hotel">
+        <ng-container *ngFor="let floor of ['G', 'F', 'E', 'D', 'C', 'B', 'A']">
+          <div class="floor">
+            <ng-container *ngFor="let num of floor >= 'F' ? [1, 2, 3, 4] : [1, 2, 3, 4, 5, 6]">
+              <div 
+                [class]="habitaciones[floor + ('0' + num).slice(-2)] || 'disponible'"
+                (click)="seleccionarHabitacion(floor + ('0' + num).slice(-2))"
+                class="room">
+                {{ floor + ('0' + num).slice(-2) }}
+              </div>
+            </ng-container>
+          </div>
+        </ng-container>
+      </div>
     </ion-row>
+  
 
     <ion-row class="habitacionesReservaBotones">
       <ion-col class="ion-padding ion-text-center"><ion-button class="primarioBoton" size="large">Seleccionar</ion-button></ion-col>
