@@ -90,22 +90,30 @@ ion-row.marginbottom {
   margin-bottom: 4em !important;
 }
 
+
+/* Habitaciones Selector Inicio */
+
 .disponible {
-  background-color: blue;
+  background-color: rgba(255, 255, 255, 0.2);
+  color:black;
+  border-color: #fff;
 }
 
 .ocupada {
-  background-color: red;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: black;
+  border-color: black;
 }
 
 .seleccionada {
-  background-color: green;
+  background-color: rgba(105, 79, 68, 0.6);
+  color: white;
+  border-color: rgb(105, 79, 68);
 }
 
 .hotel {
   display: flex;
   flex-direction: column;
-  border: 3px solid black;
   width: max-content;
   margin: 0 auto;
 }
@@ -117,24 +125,18 @@ ion-row.marginbottom {
 }
 
 .room {
+  font: normal 21px 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  border-radius: 5px;
+  border-width: 1px;
+  border-style: solid;
   width: 50px;
   height: 50px;
   margin: 0.5em;
-  border: 2px solid black;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;  
+  box-shadow: 0 13px 34px 8px rgba(0, 0, 0, 0.2), 0 3px 8px 2px rgba(0, 0, 0, 0.3);
 }
 
-.disponible {
-  background-color: blue;
-}
-
-.ocupada {
-  background-color: red;
-}
-
-.seleccionada {
-  background-color: green;
-}
+/* Habitaciones Selector Fin */
