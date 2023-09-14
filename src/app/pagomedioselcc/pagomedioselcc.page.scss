@@ -47,18 +47,18 @@ ion-row#pagoMedioMedios ion-item:hover {
     box-shadow: 0 13px 34px 34px rgba(0, 0, 0, 0.2), 0 3px 8px 2px rgba(0, 0, 0, 0.3);
 }
 
-ion-row#pagoMedioMedios > ion-item > ion-img  {
-    margin: auto;
-    padding: 0;
-    margin: 0;
-}
-
 ion-row#pagoMedioMedios > ion-item > ion-title  {
     margin: auto;
     padding: 0;
     margin: 0;
     font-weight: bold;
     font-size: 2rem;
+}
+
+ion-row#pagoMedioMedios > ion-item > ion-img  {
+    margin: auto;
+    padding: 0;
+    margin: 0;
 }
 
 ion-row#pagoMedioPie > ion-img {

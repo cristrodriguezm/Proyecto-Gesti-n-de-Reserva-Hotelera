@@ -59,13 +59,7 @@ ion-row#fechasReservaPie > ion-img {
 ion-row.marginbottom {
     margin-bottom: 4em !important;
 }
-
-ion-datetime {
-    display: block;
-    margin: 0 auto 2em;
-    --color: #694f44;
-}
-
+/*
 .rango-seleccionado p {
     display: block;
     text-align: center;
@@ -78,4 +72,41 @@ ion-datetime {
     border-radius: 8px;
     font-size: 21px;
     font-family: Arial, Helvetica, sans-serif;
+}
+*/
+ion-row.fechasReservaCalendario > ion-item-group > ion-datetime {
+    margin: 21px;
+    padding: 13px 8px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 8px;
+    width: auto;
+    color: rgba(0, 0, 0, 0.6);
+    box-shadow: 0 13px 34px 8px rgba(0, 0, 0, 0.2), 0 3px 8px 2px rgba(0, 0, 0, 0.3);
+    /*
+        margin: 0 auto 2em auto;
+        --color: #694f44; 
+    */
+}
+
+ion-row.fechasReservaCalendario > ion-item-group > ion-item.seleccionRango {
+    margin: 21px;
+    padding: 13px 5px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 8px;
+    width: 288px;
+    color: rgba(0, 0, 0, 0.6);
+    box-shadow: 0 13px 34px 8px rgba(0, 0, 0, 0.2), 0 3px 8px 2px rgba(0, 0, 0, 0.3);
+}
+
+ion-row.fechasReservaCalendario > ion-item-group > ion-item.seleccionRango > ion-title  {
+    margin: auto;
+    padding: 0;
+    margin: 0;
+    font-weight: normal;
+    font-size: 1rem;
+    line-height: 2em;
+}
+ion-row.fechasReservaCalendario > ion-item-group > ion-item.seleccionRango > ion-title > span  {
+    font-size: 1.5rem;
+    text-transform: uppercase;
 }
