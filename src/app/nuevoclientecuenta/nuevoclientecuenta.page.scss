@@ -18,10 +18,10 @@ ion-content ion-grid {
     max-width: 987px;
 }
 
-ion-row#neuEmpleadoCuentaTitulo {
+ion-row#neuClienteCuentaTitulo {
     padding: 0.5em 0;
 }
-ion-row#neuEmpleadoCuentaTitulo h1.topTitle {
+ion-row#neuClienteCuentaTitulo h1.topTitle {
     color: #694f44;
     font-size: 39px;
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -32,7 +32,7 @@ ion-row#neuEmpleadoCuentaTitulo h1.topTitle {
     margin-right: auto;
 }
 
-ion-row#neuEmpleadoCuentaInput {
+ion-row#neuClienteCuentaInput {
     color: #000;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 34px;
@@ -43,7 +43,7 @@ ion-row#neuEmpleadoCuentaInput {
 
 
 
-ion-row.neuEmpleadoCuentaBotones ion-button {
+ion-row.neuClienteCuentaBotones ion-button {
     --background: #E7D0C6;
     --background-hover: #fff;
     --background-activated: #694f44;
@@ -57,7 +57,7 @@ ion-row.neuEmpleadoCuentaBotones ion-button {
     margin: auto;
     
 }
-ion-row.neuEmpleadoCuentaBotones ion-button.primarioBoton {
+ion-row.neuClienteCuentaBotones ion-button.primarioBoton {
     --background-activated: #E7D0C6;
     --background-focused: #E7D0C6;
     --background: #694f44;
@@ -65,7 +65,7 @@ ion-row.neuEmpleadoCuentaBotones ion-button.primarioBoton {
     --color: #E7D0C6;
 }
 
-ion-row#neuEmpleadoCuentaPie > ion-img {
+ion-row#neuClienteCuentaPie > ion-img {
     max-width: 377px;
     margin: 89px auto 0 auto;
 }
