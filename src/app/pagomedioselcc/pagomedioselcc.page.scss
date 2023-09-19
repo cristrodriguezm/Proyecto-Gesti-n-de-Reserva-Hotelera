@@ -61,9 +61,23 @@ ion-row#pagoMedioMedios > ion-item > ion-img  {
     margin: 0;
 }
 
+ion-row.pagoMedioBotones ion-button {
+    --background: #E7D0C6;
+    --background-hover: #E7D0C6;
+    --background-activated: #694f44;
+    --background-focused: #694f44;
+    --box-shadow: 0 13px 34px 8px rgba(0, 0, 0, 0.2), 0 3px 8px 2px rgba(0, 0, 0, 0.3);
+    --border-radius: 3px;
+    --color: #000;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 21px;
+    font-weight: bold;
+    margin: auto;
+}
+
 ion-row#pagoMedioPie > ion-img {
     max-width: 377px;
-    margin: auto;
+    margin: 89px auto 0 auto;
 }
 
 ion-row.marginbottom {
