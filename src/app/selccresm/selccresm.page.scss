@@ -49,18 +49,34 @@ ion-row#seleccionResumenLista h3 {
     font-weight: bold;
     color: #694f44;
 }
+ion-row#seleccionResumenLista ol li {
+    background-color: rgba(255, 255, 255, 0.4);
+      border-bottom: 1px solid #694f44;
+      padding: 0.5em;
+      margin: 0;
+}
 ion-row#seleccionResumenLista ol li p {
     line-height: 1.5em;
       color: #694f44;
       font-size: 21px;
       font-family: Arial, Helvetica, sans-serif;
       font-weight: normal;
-      padding: 1em;
-      border-bottom: 1px solid #694f44;
+      padding: 0.5em;
       margin: 0;
-      background-color: rgba(255, 255, 255, 0.4);
 }
-
+ion-row#seleccionResumenLista ol li p ion-button {
+--background: #E7D0C6;
+--background-hover: #fff;
+--background-activated: #694f44;
+--background-focused: #694f44;
+--box-shadow: 0 13px 34px 8px rgba(0, 0, 0, 0.2), 0 3px 8px 2px rgba(0, 0, 0, 0.3);
+--border-radius: 3px;
+--color: #000;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+font-size: 13px;
+font-weight: bold;
+margin: 1em 1em 1em 0;
+}
 
 ion-row.seleccionResumenBotones ion-button {
     --background: #E7D0C6;
