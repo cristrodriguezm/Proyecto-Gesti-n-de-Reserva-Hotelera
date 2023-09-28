@@ -79,6 +79,10 @@ const routes: Routes = [
     path: 'nuevoclientecuenta',
     loadChildren: () => import('./nuevoclientecuenta/nuevoclientecuenta.module').then( m => m.NuevoclientecuentaPageModule)
   },
+  {
+    path: 'habitacion',
+    loadChildren: () => import('./habitacion/habitacion.module').then( m => m.HabitacionPageModule)
+  },
 ];
 
 @NgModule({
