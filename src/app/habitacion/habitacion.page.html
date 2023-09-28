@@ -4,23 +4,22 @@
   <ion-grid  class="ion-padding">
     <ion-row id="habitacionCatalogoTitulo" class="ion-text-center marginbottom">
 
-      <h1 class="topTitle">Habitación<wbr/>&nbsp;<span id="tipo">Premium<!-- Habitació tipo --></span><wbr/>&nbsp;<span id="numero">G10<!-- Habitació número --></span>
-
+      <h1 class="topTitle">
+        Habitación<wbr/>&nbsp;<span id="tipo">Premium<!-- Habitació tipo --></span><wbr/>&nbsp;<span id="numero">G10<!-- Habitació número --></span>
       </h1>
     </ion-row>
 
-    <ion-row class="habitacionCatalogoContenido ion-text-center marginbottom">
+    <ion-row class="habitacionCatalogoDescripcion ion-text-center borderTop">
 
       <p class="topP">Descripción.<!-- Descripción --></p>
 
       <p>$ <span>888.888<!-- Precio --></span> por noche.</p>
 
-      <p>
-        <!-- Start foreach imagen in imagenesList -->
-        <ion-img src="" alt="" ></ion-img>
-        <!-- End foreach -->
-      </p>
-
+    </ion-row>
+    <ion-row class="habitacionCatalogoFotos ion-text-center marginbottom">
+      <!-- Start foreach imagen in imagenesList -->
+      <ion-col><ion-img src="" alt="" ></ion-img></ion-col>
+      <!-- End foreach -->
     </ion-row>
 
     <ion-row id="habitacionCatalogoBotones">
