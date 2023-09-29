@@ -87,6 +87,10 @@ const routes: Routes = [
     path: 'habtcnescatalogo',
     loadChildren: () => import('./habtcnescatalogo/habtcnescatalogo.module').then( m => m.HabtcnescatalogoPageModule)
   },
+  {
+    path: 'clientereservaspanel',
+    loadChildren: () => import('./clientereservaspanel/clientereservaspanel.module').then( m => m.ClientereservaspanelPageModule)
+  },
 ];
 
 @NgModule({
