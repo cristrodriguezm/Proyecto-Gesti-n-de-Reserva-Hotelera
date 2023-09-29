@@ -7,10 +7,16 @@ import { HotelService } from '../hotel.service';
   styleUrls: ['./habitsreserva.page.scss'],
 })
 export class HabitsreservaPage implements OnInit {
-
   habitaciones: any = {};
+  pisoLetras: string[] = ['A', 'B', 'C', 'D', 'E', 'F', 'G'];
 
-  constructor(private hotelService: HotelService) { }
+
+isString(value: any): value is string {
+  return typeof value === 'string';
+}
+
+
+  constructor(private hotelService: HotelService) {}
 
   ngOnInit() {
     this.habitaciones = this.hotelService.getHabitaciones();
@@ -20,8 +26,8 @@ export class HabitsreservaPage implements OnInit {
     this.hotelService.seleccionarHabitacion(id);
   }
 
-  getKeyAsString(key: any): string {
-    return key as string;
+  esTurista(piso: string): boolean {
+    return ['A', 'B', 'C', 'D', 'E'].includes(piso);
   }
-
 }
+
