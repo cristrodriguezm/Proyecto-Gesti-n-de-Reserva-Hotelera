@@ -83,6 +83,10 @@ const routes: Routes = [
     path: 'habitacion',
     loadChildren: () => import('./habitacion/habitacion.module').then( m => m.HabitacionPageModule)
   },
+  {
+    path: 'habtcnescatalogo',
+    loadChildren: () => import('./habtcnescatalogo/habtcnescatalogo.module').then( m => m.HabtcnescatalogoPageModule)
+  },
 ];
 
 @NgModule({

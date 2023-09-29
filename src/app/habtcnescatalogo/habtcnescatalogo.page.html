@@ -1,18 +1,18 @@
 <ion-content [fullscreen]="true">
   <ion-grid class="ion-padding">
     <ion-row id="habitacionesReservaTitulo" class="ion-text-center marginbottom">
-      <h1 class="topTitle">Seleccione <wbr/>habitaciones</h1>
+      <h1 class="topTitle">Catálogo de <wbr/>habitaciones</h1>
     </ion-row>
 
     <div *ngFor="let piso of pisoLetras; let i = index">
 
       <ion-row class="ion-text-center piso-title-row">
-        <h2>— Piso {{ i + 1 }} · <span>Habitaciones {{ esTurista(piso) ? 'Turista' : 'Premium' }}</span> —</h2>
+          <h2>—&nbsp; Piso {{ i + 1 }} · <span>Habitaciones {{ esTurista(piso) ? 'Turista' : 'Premium' }}</span> &nbsp;—</h2>
       </ion-row>
   
       <ion-row class="ion-justify-content-center floor">
           <ng-container class="ion-justify-content-center" *ngFor="let habitacion of habitaciones | keyvalue">
-              <div class="room habitacion-box" [class]="habitacion.value" *ngIf="isString(habitacion.key) && habitacion.key.startsWith(piso)" (click)="seleccionarHabitacion(habitacion.key)">
+              <div class="room habitacion-box" [class]="habitacion.value" *ngIf="isString(habitacion.key) && habitacion.key.startsWith(piso)">
                   {{ habitacion.key }}
               </div>
           </ng-container>
@@ -23,12 +23,7 @@
 
     <ion-row class="habitacionesReservaBotones margintop">
       <ion-col class="ion-padding ion-text-center">
-        <ion-button class="primarioBoton" size="large">Seleccionar</ion-button>
-      </ion-col>
-    </ion-row>
-    <ion-row class="habitacionesReservaBotones">
-      <ion-col class="ion-padding ion-text-center">
-        <ion-button size="large">Atrás</ion-button>
+        <ion-button size="large">Volver</ion-button>
       </ion-col>
     </ion-row>
 

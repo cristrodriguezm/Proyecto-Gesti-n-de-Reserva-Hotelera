@@ -6,8 +6,8 @@ import { Injectable } from '@angular/core';
 })
 export class HotelService {
 
-  private pisoLetras = ['A', 'B', 'C', 'D', 'E', 'F', 'G'];
-  private habitacionesPorPiso = [6, 6, 6, 6, 6, 4, 4];
+  private pisoLetras = [ 'G', 'F', 'E', 'D', 'C', 'B', 'A'];
+  private habitacionesPorPiso = [ 4, 4, 6, 6, 6, 6, 6];
   private estadoHabitaciones: { [key: string]: 'disponible' | 'ocupada' | 'seleccionada' } = {};
 
   constructor() {

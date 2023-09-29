@@ -16,6 +16,7 @@ ion-content ion-grid {
 
 ion-row#habitacionesReservaTitulo {
   padding: 0.5em 0;
+  margin-bottom: 4em !important;
 }
 
 ion-row#habitacionesReservaTitulo h1.topTitle {
@@ -56,8 +57,8 @@ ion-row#habitacionesReservaPie > ion-img {
   margin: 89px auto 0 auto;
 }
 
-ion-row.marginbottom {
-  margin-bottom: 4em !important;
+ion-row.margintop {
+  margin-top: 4em !important;
 }
 
 /* Habitaciones Selector Inicio */
@@ -91,9 +92,14 @@ ion-row.marginbottom {
   display: flex;
   flex-direction: row;
   align-items: center;
+  text-align: center;
   margin: 0.5em 0;
-  border: 1px solid #694f44;
+  border: none;
   padding: 10px;
+}
+.floor ng-container {
+  text-align: center;
+  margin: 0 auto;
 }
 
 .room {
@@ -106,6 +112,7 @@ ion-row.marginbottom {
   margin: 0.5em;
   display: flex;
   align-items: center;
+  text-align: center;
   justify-content: center;
   cursor: pointer;
   box-shadow: 0 13px 34px 8px rgba(0, 0, 0, 0.2), 0 3px 8px 2px rgba(0, 0, 0, 0.3);
@@ -119,6 +126,26 @@ ion-row.marginbottom {
   border-radius: 8px;
   padding: 0.5em 1em;
   margin-right: 1em;
+}
+
+ion-row.piso-title-row {
+  text-align: center;
+  padding: 0;
+  margin: 2em auto 0 auto;
+}
+
+
+ion-row.piso-title-row h2 {
+color: #694f44;
+font-size: 21px;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+font-style: normal;
+font-weight: normal;
+margin: 0 auto;
+padding: 0;
+}
+ion-row.piso-title-row h2 span {
+font-weight: bold;
 }
 
 .habitaciones-piso {
