@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HotelService } from '../hotel.service';
+import { Location } from "@angular/common";
 
 @Component({
   selector: 'app-habitsreserva',
@@ -14,7 +15,7 @@ isString(value: any): value is string {
   return typeof value === 'string';
 }
 
-  constructor(private hotelService: HotelService) {}
+  constructor(private hotelService: HotelService, private location: Location) {}
 
   ngOnInit() {
     this.habitaciones = this.hotelService.getHabitaciones();
@@ -26,6 +27,9 @@ isString(value: any): value is string {
 
   esTurista(piso: string): boolean {
     return ['A', 'B', 'C', 'D', 'E'].includes(piso);
+  }
+  myBackButton(){
+    this.location.back();
   }
 }
 

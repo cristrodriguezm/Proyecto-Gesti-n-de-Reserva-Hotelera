@@ -8,15 +8,15 @@
     
     
     <ion-row class="habitacionesGestorTipo panelBoton">
-      <ion-button size="large">Habitaciones turista</ion-button>
+      <ion-button size="large" [routerLink]="['/turstahabitsgestor']">Habitaciones turista</ion-button>
     </ion-row>
     <ion-row class="habitacionesGestorTipo panelBoton marginbottom">
-      <ion-button size="large">Habitaciones premium</ion-button>
+      <ion-button size="large" [routerLink]="['/premumhabitsgestor']">Habitaciones premium</ion-button>
     </ion-row>
 
 
     <ion-row class="habitacionesGestorBotones">
-      <ion-button size="large" class="primarioBoton">Volver al panel</ion-button>
+      <ion-button [routerLink]="['/hotel-admn']" size="large" class="primarioBoton">Volver al panel</ion-button>
     </ion-row>
 
     <ion-row id="habitacionesGestorPie" class="ion-text-center">

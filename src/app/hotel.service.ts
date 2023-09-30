@@ -38,4 +38,5 @@ export class HotelService {
   ocuparHabitacion(id: string) {
     this.estadoHabitaciones[id] = 'ocupada';
   }
+
 }

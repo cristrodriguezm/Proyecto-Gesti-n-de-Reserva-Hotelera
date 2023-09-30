@@ -5,15 +5,15 @@
     <ion-row id="habitacionCatalogoTitulo" class="ion-text-center marginbottom">
 
       <h1 class="topTitle">
-        Habitación<wbr/>&nbsp;<span id="tipo">Premium<!-- Habitació tipo --></span><wbr/>&nbsp;<span id="numero">G10<!-- Habitació número --></span>
+        Habitación<wbr/>&nbsp;<span id="tipo">Premium<!-- {{ Habitació tipo }}  --></span><wbr/>&nbsp;<span id="numero">G10<!-- {{ Habitació número }} --></span>
       </h1>
     </ion-row>
 
     <ion-row class="habitacionCatalogoDescripcion ion-text-center borderTop">
 
-      <p class="topP">Descripción.<!-- Descripción --></p>
+      <p class="topP">Descripción.<!-- {{ Descripción }} --></p>
 
-      <p>$ <span>888.888<!-- Precio --></span> por noche.</p>
+      <p>$ <span>888.888<!-- {{ Precio }} --></span> por noche.</p>
 
     </ion-row>
     <ion-row class="habitacionCatalogoFotos ion-text-center marginbottom">
@@ -23,7 +23,7 @@
     </ion-row>
 
     <ion-row id="habitacionCatalogoBotones">
-      <ion-col class="ion-padding ion-text-center"><ion-button size="large">Volver</ion-button></ion-col>
+      <ion-col class="ion-padding ion-text-center"><ion-button (click)="myBackButton()" size="large">Volver</ion-button></ion-col>
     </ion-row>
 
     <ion-row id="habitacionCatalogoPie" class="ion-text-center">

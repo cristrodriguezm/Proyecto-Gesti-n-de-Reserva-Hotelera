@@ -91,6 +91,10 @@ const routes: Routes = [
     path: 'clientereservaspanel',
     loadChildren: () => import('./clientereservaspanel/clientereservaspanel.module').then( m => m.ClientereservaspanelPageModule)
   },
+  {
+    path: 'empleadoscuentas',
+    loadChildren: () => import('./empleadoscuentas/empleadoscuentas.module').then( m => m.EmpleadoscuentasPageModule)
+  },
 ];
 
 @NgModule({
