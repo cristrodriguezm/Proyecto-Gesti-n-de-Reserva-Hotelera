@@ -1,0 +1,36 @@
+
+<ion-content [fullscreen]="true">
+
+  <ion-grid class="ion-padding">
+    <ion-row id="reservaLoginTitulo" class="ion-text-center marginbottom">
+      <h1 class="topTitle">Ingrese sus credenciales hotel</h1>
+    </ion-row>
+
+    <ion-row class="reservaLoginCampo ion-text-center">
+      <ion-input placeholder="Nombre de usuario"></ion-input>
+    </ion-row>
+
+    <ion-row class="reservaLoginCampo ion-text-center marginbottom">
+      <ion-input type="password" placeholder="Contraseña"></ion-input>
+    </ion-row>
+
+    <ion-row class="reservaLoginBotones">
+      <ion-button class="primarioBoton" [routerLink]="['/verif']" size="large">Verificar Datos</ion-button>
+    </ion-row>
+
+    <ion-row class="reservaLoginBotones">
+      <ion-button size="large" [routerLink]="['/nuevoclientecuenta']" >Crear cuenta</ion-button>
+    </ion-row>
+
+    <ion-row class="reservaLoginBotones">
+      <ion-button size="large" (click)="myBackButton()">Volver</ion-button>
+    </ion-row>
+
+    <ion-row id="reservaLoginPie" class="ion-text-center">
+      <ion-img src="../../assets/images/pacific reef titulo .png" alt="Hotel Título" ionImgDidLoad ></ion-img>
+    </ion-row>
+  
+  </ion-grid>
+
+</ion-content>
+  

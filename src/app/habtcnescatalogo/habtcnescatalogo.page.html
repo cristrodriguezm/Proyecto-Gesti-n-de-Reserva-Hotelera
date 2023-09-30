@@ -12,7 +12,7 @@
   
       <ion-row class="ion-justify-content-center floor">
           <ng-container class="ion-justify-content-center" *ngFor="let habitacion of habitaciones | keyvalue">
-              <div class="room habitacion-box" (click)="ingresar()" [class]="habitacion.value" *ngIf="isString(habitacion.key) && habitacion.key.startsWith(piso)">
+              <div class="room habitacion-box" [routerLink]="['/habitacion']" [class]="habitacion.value" *ngIf="isString(habitacion.key) && habitacion.key.startsWith(piso)">
                   {{ habitacion.key }}
               </div>
           </ng-container>

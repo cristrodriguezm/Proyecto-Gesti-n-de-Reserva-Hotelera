@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from "@angular/common";
 
+
 @Component({
-  selector: 'app-selccresm',
-  templateUrl: './selccresm.page.html',
-  styleUrls: ['./selccresm.page.scss'],
+  selector: 'app-reservalogin',
+  templateUrl: './reservalogin.page.html',
+  styleUrls: ['./reservalogin.page.scss'],
 })
-export class SelccresmPage implements OnInit {
+export class ReservaloginPage implements OnInit {
 
   constructor( private location: Location) { }
 

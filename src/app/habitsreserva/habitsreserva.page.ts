@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HotelService } from '../hotel.service';
 import { Location } from "@angular/common";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-habitsreserva',
@@ -13,8 +14,9 @@ export class HabitsreservaPage implements OnInit {
   habitacionesPorPiso: number[] = [6, 6, 6, 6, 6, 4, 4];
   estadoHabitaciones: { [key: string]: 'disponible' | 'ocupada' | 'seleccionada' } = {};
   NUM_HABITACIONES_OCUPADAS = 8;  // numero de habitaciones ocupadas
+  habitacionesSeleccionadas: string[] = [];
 
-  constructor(private hotelService: HotelService, private location: Location) {}
+  constructor(private hotelService: HotelService, private location: Location, private router: Router) {}
 
   ngOnInit() {
     this.inicializarHabitaciones();
@@ -28,8 +30,13 @@ export class HabitsreservaPage implements OnInit {
   seleccionarHabitacion(id: string) {
     if (this.estadoHabitaciones[id] === 'disponible') {
         this.estadoHabitaciones[id] = 'seleccionada';
+        this.habitacionesSeleccionadas.push(id);
     } else if (this.estadoHabitaciones[id] === 'seleccionada') {
         this.estadoHabitaciones[id] = 'disponible';
+        const index = this.habitacionesSeleccionadas.indexOf(id);
+        if (index > -1) {
+            this.habitacionesSeleccionadas.splice(index, 1);
+        }
     }
   }
 
@@ -58,7 +65,12 @@ export class HabitsreservaPage implements OnInit {
         }
     }
   }
+
   myBackButton(){
     this.location.back();
+  }
+
+  navegarAResumen() {
+    this.router.navigate(['/selccresm'], { queryParams: { habitaciones: JSON.stringify(this.habitacionesSeleccionadas) } });
   }
 }

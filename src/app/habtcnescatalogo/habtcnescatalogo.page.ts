@@ -12,7 +12,7 @@ export class HabtcnescatalogoPage implements OnInit {
   habitaciones: any = {};
   pisoLetras: string[] = [ 'A', 'B', 'C', 'D', 'E', 'F', 'G'];
 
-  nombre: string = "";
+  habitacionNumero: any = "";
 
   isString(value: any): value is string {
     return typeof value === 'string';
@@ -24,8 +24,8 @@ export class HabtcnescatalogoPage implements OnInit {
     this.habitaciones = this.hotelService.getHabitaciones();
   }
 
-  ingresar() {
-    let navigationExtras: NavigationExtras = { state: { user: this.nombre } };
+  ingresar(habitacionNumero: any) {
+    let navigationExtras: NavigationExtras = habitacionNumero;
     this.router.navigate(['./habitacion'], navigationExtras); }
   
   seleccionarHabitacion(id: string) {

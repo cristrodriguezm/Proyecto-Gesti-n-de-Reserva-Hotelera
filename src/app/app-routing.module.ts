@@ -95,6 +95,10 @@ const routes: Routes = [
     path: 'empleadoscuentas',
     loadChildren: () => import('./empleadoscuentas/empleadoscuentas.module').then( m => m.EmpleadoscuentasPageModule)
   },
+  {
+    path: 'reservalogin',
+    loadChildren: () => import('./reservalogin/reservalogin.module').then( m => m.ReservaloginPageModule)
+  },
 ];
 
 @NgModule({

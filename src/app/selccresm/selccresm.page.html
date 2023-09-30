@@ -41,10 +41,10 @@
     </ion-row>
 
     <ion-row class="seleccionResumenBotones">
-      <ion-col class="ion-padding ion-text-center"><ion-button class="primarioBoton" size="large">Ir a pagar</ion-button></ion-col>
+      <ion-col class="ion-padding ion-text-center"><ion-button class="primarioBoton" size="large" [routerLink]="['/reservalogin']">Ir a pagar</ion-button></ion-col>
     </ion-row>
     <ion-row class="seleccionResumenBotones">
-      <ion-col class="ion-padding ion-text-center"><ion-button size="large">Atrás</ion-button></ion-col>
+      <ion-col class="ion-padding ion-text-center"><ion-button size="large" (click)="myBackButton()">Atrás</ion-button></ion-col>
     </ion-row>
 
     <ion-row id="reservaPie" class="ion-text-center">
