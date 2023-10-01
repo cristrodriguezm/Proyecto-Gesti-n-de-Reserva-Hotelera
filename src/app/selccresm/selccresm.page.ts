@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from "@angular/common";
 import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-selccresm',
@@ -14,12 +15,17 @@ export class SelccresmPage implements OnInit {
   PRECIO_PREMIUM: number = 45000;
   total: number = 0;
 
-  constructor( private location: Location, private route: ActivatedRoute) { }
+  fechaInicioRango: Date | null = null;
+  fechaFinRango: Date | null = null;
+
+  constructor( private location: Location, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
       this.habitacionesSeleccionadas = JSON.parse(params['habitaciones']);
       this.calcularTotal();
+      this.fechaInicioRango = JSON.parse(params['fechaInicio']);
+      this.fechaFinRango = JSON.parse(params['fechaFin']);
     });
   }
 
@@ -36,4 +42,9 @@ export class SelccresmPage implements OnInit {
       return sum + (this.esPremium(habitacion) ? this.PRECIO_PREMIUM : this.PRECIO_TURISTA);
     }, 0);
   }
+
+  navegarALogin() {
+    this.router.navigate(['/reservalogin'], { queryParams: { habitaciones: JSON.stringify(this.habitacionesSeleccionadas) } });
+  }
+
 }

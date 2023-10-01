@@ -8,9 +8,18 @@
 
     <ion-row id="pagoResumenLista" class="ion-text-center marginbottom">
       <ol>
+        <ng-container *ngFor="let habit of habitacionesSeleccionadas">
+          <li>
+            <p>
+              Tres noches desde abril 23 de 2023 en habitación 
+              <span *ngIf="esPremium(habit); else elseBlock"><strong>Premium número {{ habit }}</strong> por $ 45.000</span>
+              <ng-template #elseBlock><span><strong>Turista número {{ habit }}</strong> por $ 30.000</span></ng-template>.
+            </p>
+          </li>
+        </ng-container>
         <li>
           <p>
-            Pago suma por habitaciones <wbr>reservadas $ 90.000.
+            Suma por habitaciones reservadas $ {{ total }}.
           </p>
         </li>
       </ol>

@@ -11,8 +11,8 @@
         <ion-datetime displayFormat="DD-MM-YYYY" [(ngModel)]="fechaSeleccionada" (ionChange)="seleccionarFechaRango(fechaSeleccionada)"></ion-datetime>
       </ion-item-group>
       <ion-item-group>
-        <ion-item lines="none" class="seleccionRango ion-text-center"><ion-title size="large"><strong>Fecha de entrada</strong><br/><span>{{ fechaInicioRango ? (fechaInicioRango | date: 'dd-MM-yyyy') : 'No seleccionada' }}</span></ion-title></ion-item>
-        <ion-item lines="none" class="seleccionRango ion-text-center"><ion-title size="large"><strong>Fecha de salida</strong><br/><span>{{ fechaFinRango ? (fechaFinRango | date: 'dd-MM-yyyy') : 'No seleccionada' }}</span></ion-title></ion-item>
+        <ion-item lines="none" class="seleccionRango ion-text-center"><ion-title size="large"><strong>Fecha de entrada</strong><br/><span id="entradaFecha">{{ fechaInicioRango ? (fechaInicioRango | date: 'dd-MM-yyyy') : 'No seleccionada' }}</span></ion-title></ion-item>
+        <ion-item lines="none" class="seleccionRango ion-text-center"><ion-title size="large"><strong>Fecha de salida</strong><br/><span id="salidaFecha">{{ fechaFinRango ? (fechaFinRango | date: 'dd-MM-yyyy') : 'No seleccionada' }}</span></ion-title></ion-item>
       </ion-item-group>
     </ion-row>
       <!-- CALENDARIO -->
