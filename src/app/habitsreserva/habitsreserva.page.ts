@@ -18,6 +18,11 @@ export class HabitsreservaPage implements OnInit {
 
   constructor(private hotelService: HotelService, private location: Location, private router: Router) {}
 
+  navigateToDestinationPage() {
+    const dataToPass = 'G08';
+    this.router.navigate(['/selccresm', dataToPass]);
+  }
+
   ngOnInit() {
     this.inicializarHabitaciones();
     this.habitaciones = this.estadoHabitaciones;

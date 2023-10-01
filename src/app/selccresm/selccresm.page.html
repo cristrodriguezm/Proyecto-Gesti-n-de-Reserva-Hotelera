@@ -1,47 +1,33 @@
-
 <ion-content [fullscreen]="true">
-
-  <ion-grid  class="ion-padding">
+  <ion-grid class="ion-padding">
     <ion-row id="seleccionResumenTitulo" class="ion-text-center marginbottom">
       <h1 class="topTitle">Resumen de<wbr/> la selección</h1>
     </ion-row>
 
     <ion-row id="seleccionResumenLista" class="ion-text-center marginbottom">
       <ol>
+        <ng-container *ngFor="let habit of habitacionesSeleccionadas">
+          <li>
+            <p>
+              Tres noches desde abril 23 de 2023 en habitación 
+              <span *ngIf="esPremium(habit); else elseBlock"><strong>Premium número {{ habit }}</strong> por $ 45.000</span>
+              <ng-template #elseBlock><span><strong>Turista número {{ habit }}</strong> por $ 30.000</span></ng-template>.
+            </p>
+            <p>
+              <ion-button>Ver catálogo de habitación</ion-button>
+            </p>
+          </li>
+        </ng-container>
         <li>
           <p>
-            Tres noches en habitación premium número 403 desde abril 23 de 2023 por $ 30.000.
-          </p>
-          <p>
-            <ion-button>Ver catálogo de habitación</ion-button>
-          </p>
-        </li>
-        <li>
-          <p>
-            Tres noches en habitación premium número 403 desde abril 23 de 2023 por $ 30.000.
-          </p>
-          <p>
-            <ion-button>Ver catálogo de habitación</ion-button>
-          </p>
-        </li>
-        <li>
-          <p>
-            Tres noches en habitación premium número 403 desde abril 23 de 2023 por $ 30.000.
-          </p>
-          <p>
-            <ion-button>Ver catálogo de habitación</ion-button>
-          </p>
-        </li>
-        <li>
-          <p>
-            Suma por habitaciones reservadas $ 90.000.
+            Suma por habitaciones reservadas $ {{ total }}.
           </p>
         </li>
       </ol>
     </ion-row>
 
-    <ion-row class="seleccionResumenBotones">
-      <ion-col class="ion-padding ion-text-center"><ion-button class="primarioBoton" size="large" [routerLink]="['/reservalogin']">Ir a pagar</ion-button></ion-col>
+  <ion-row class="seleccionResumenBotones">
+      <ion-col class="ion-padding ion-text-center"><ion-button class="primarioBoton" size="large" [routerLink]="['/reservalogin']">Credenciales Hotel</ion-button></ion-col>
     </ion-row>
     <ion-row class="seleccionResumenBotones">
       <ion-col class="ion-padding ion-text-center"><ion-button size="large" (click)="myBackButton()">Atrás</ion-button></ion-col>
@@ -54,4 +40,3 @@
   </ion-grid>
 
 </ion-content>
-  
