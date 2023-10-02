@@ -5,21 +5,31 @@
     <ion-row id="habitacionCatalogoTitulo" class="ion-text-center marginbottom">
 
       <h1 class="topTitle">
-        Habitación&nbsp;<wbr/>{{ habit }}
+        <span *ngIf="esPremium(habit); else elseBlock">Habitación <wbr/>Premium número {{ habit }}</span>
+        <ng-template #elseBlock>Habitación <wbr/>Turista número {{ habit }}</ng-template>
       </h1>
     </ion-row>
 
     <ion-row class="habitacionCatalogoDescripcion ion-text-center borderTop">
 
-      <p class="topP">Descripción.<!-- {{ Descripción }} --></p>
+      <p class="topP"><span *ngIf="esPremium(habit); else elseBlock">Descripción habitación Premium</span>
+        <ng-template #elseBlock>Descripción habitación Turista</ng-template>.</p>
 
-      <p>$ <span>888.888<!-- {{ Precio }} --></span> por noche.</p>
+      <p>$ <span *ngIf="esPremium(habit); else elseBlock">45.000</span>
+        <ng-template #elseBlock>30.000</ng-template> por noche.</p>
 
     </ion-row>
     <ion-row class="habitacionCatalogoFotos ion-text-center marginbottom">
-      <!-- Start foreach imagen in imagenesList -->
-      <ion-col><ion-img src="" alt="" ></ion-img></ion-col>
-      <!-- End foreach -->
+      <span *ngIf="esPremium(habit); else elseBlockk">
+        <ion-img src="../../assets/images/premiumhabts/1.jpg" alt="Habitación Premium" ionImgDidLoad ></ion-img>
+        <ion-img src="../../assets/images/premiumhabts/2.jpg" alt="Habitación Premium" ionImgDidLoad ></ion-img>
+        <ion-img src="../../assets/images/premiumhabts/3.jpg" alt="Habitación Premium" ionImgDidLoad ></ion-img>
+      </span>
+      <ng-template #elseBlockk>
+        <ion-img src="../../assets/images/turistahabts/1.jpg" alt="Habitación Turista" ionImgDidLoad ></ion-img>
+        <ion-img src="../../assets/images/turistahabts/2.jpg" alt="Habitación Turista" ionImgDidLoad ></ion-img>
+        <ion-img src="../../assets/images/turistahabts/3.jpg" alt="Habitación Turista" ionImgDidLoad ></ion-img>
+      </ng-template>
     </ion-row>
 
     <ion-row id="habitacionCatalogoBotones">

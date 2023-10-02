@@ -20,6 +20,10 @@ export class HabitacionPage implements OnInit {
     });
   }
 
+  esPremium(habitacion: string): boolean {
+    return ['F', 'G'].includes(habitacion.charAt(0));
+  }
+
   myBackButton(){
     this.location.back();
   }

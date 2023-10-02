@@ -14,8 +14,7 @@
               <ng-template #elseBlock><strong>Turista número {{ habit }}</strong> por $ {{ diferenciaEnDias * 30000 }}</ng-template>
             </p>
             <p>
-              <ion-button *ngIf="esPremium(habit); else elseBlockk" (click)="navegarAHabitacion('Premium número ' + habit)">Ver catálogo de habitación</ion-button>
-              <ng-template #elseBlockk><ion-button (click)="navegarAHabitacion('Turista número ' + habit)">Ver catálogo de habitación</ion-button></ng-template>
+              <ion-button (click)="navegarAHabitacion(habit)">Ver catálogo de habitación</ion-button>
             </p>
           </li>
         </ng-container>

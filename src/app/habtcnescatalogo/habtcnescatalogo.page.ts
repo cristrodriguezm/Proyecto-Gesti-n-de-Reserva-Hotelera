@@ -24,10 +24,6 @@ export class HabtcnescatalogoPage implements OnInit {
     this.habitaciones = this.hotelService.getHabitaciones();
   }
 
-  ingresar(habitacionNumero: any) {
-    let navigationExtras: NavigationExtras = habitacionNumero;
-    this.router.navigate(['./habitacion'], navigationExtras); }
-  
   seleccionarHabitacion(id: string) {
     this.hotelService.seleccionarHabitacion(id);
   }
@@ -35,6 +31,7 @@ export class HabtcnescatalogoPage implements OnInit {
   esTurista(piso: string): boolean {
     return ['A', 'B', 'C', 'D', 'E'].includes(piso);
   }
+  
   myBackButton(){
     this.location.back();
   }
