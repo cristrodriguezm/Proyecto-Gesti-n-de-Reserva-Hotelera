@@ -18,6 +18,9 @@ export class PagoresumenPage implements OnInit {
   fechaInicio: Date | null = null;
   fechaFin: Date | null = null;
 
+  diferenciaEnMilisegundos: number = 0;
+  diferenciaEnDias: number = 0;
+
   constructor( private route: ActivatedRoute, private location: Location, private router: Router) { }
 
   ngOnInit() {
@@ -27,6 +30,8 @@ export class PagoresumenPage implements OnInit {
       if(params['fechaInicio'] && params['fechaFin']) {
           this.fechaInicio = new Date(JSON.parse(params['fechaInicio']));
           this.fechaFin = new Date(JSON.parse(params['fechaFin']));
+          this.diferenciaEnMilisegundos = this.fechaFin.getTime() - this.fechaInicio.getTime();
+          this.diferenciaEnDias = Math.floor(this.diferenciaEnMilisegundos / (1000 * 3600 * 24));
       }
     });
   }

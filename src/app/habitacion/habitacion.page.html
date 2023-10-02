@@ -12,11 +12,11 @@
 
     <ion-row class="habitacionCatalogoDescripcion ion-text-center borderTop">
 
-      <p class="topP"><span *ngIf="esPremium(habit); else elseBlock">Descripción habitación Premium</span>
-        <ng-template #elseBlock>Descripción habitación Turista</ng-template>.</p>
+      <p class="topP"><span *ngIf="esPremium(habit); else elseBlockx">Descripción habitación Premium</span>
+        <ng-template #elseBlockx>Descripción habitación Turista</ng-template>.</p>
 
-      <p>$ <span *ngIf="esPremium(habit); else elseBlock">45.000</span>
-        <ng-template #elseBlock>30.000</ng-template> por noche.</p>
+      <p>$ <span *ngIf="esPremium(habit); else elseBlocc">45.000</span>
+        <ng-template #elseBlocc>30.000</ng-template> por noche.</p>
 
     </ion-row>
     <ion-row class="habitacionCatalogoFotos ion-text-center marginbottom">

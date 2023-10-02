@@ -11,15 +11,15 @@
         <ng-container *ngFor="let habit of habitacionesSeleccionadas">
           <li>
             <p>
-              Desde {{ fechaInicio | date:'mediumDate' }} hasta {{ fechaFin | date:'mediumDate' }} en habitación 
-              <span *ngIf="esPremium(habit); else elseBlock"><strong>Premium número {{ habit }}</strong> por $ 45.000</span>
-              <ng-template #elseBlock><span><strong>Turista número {{ habit }}</strong> por $ 30.000</span></ng-template>.
+              {{ diferenciaEnDias }} días desde {{ fechaInicio | date:'mediumDate' }} hasta {{ fechaFin | date:'mediumDate' }} en habitación 
+              <span *ngIf="esPremium(habit); else elseBlock"><strong>Premium número {{ habit }}</strong> por $ {{ diferenciaEnDias * 45000 }}</span>
+              <ng-template #elseBlock><strong>Turista número {{ habit }}</strong> por $ {{ diferenciaEnDias * 30000 }}</ng-template>
             </p>
           </li>
         </ng-container>
         <li>
           <p>
-            Pago total efectuado $ {{ total }}.
+            Suma por habitaciones reservadas $ {{ diferenciaEnDias * total }}.
           </p>
         </li>
       </ol>

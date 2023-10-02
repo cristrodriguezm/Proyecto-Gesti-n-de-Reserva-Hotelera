@@ -15,11 +15,12 @@ export class SelccresmPage implements OnInit {
   PRECIO_TURISTA: number = 30000;
   PRECIO_PREMIUM: number = 45000;
   total: number = 0;
-  diferenciaEnMilisegundos: number = 0;
-  diferenciaEnDias: number = 0;
 
   fechaInicio: Date | null = null;
   fechaFin: Date | null = null;
+
+  diferenciaEnMilisegundos: number = 0;
+  diferenciaEnDias: number = 0;
 
   constructor( private route: ActivatedRoute, private location: Location, private router: Router ) { }
 
@@ -36,10 +37,6 @@ export class SelccresmPage implements OnInit {
     });
   }
 
-  myBackButton() {
-    this.location.back();
-  }
-
   esPremium(habitacion: string): boolean {
     return ['F', 'G'].includes(habitacion.charAt(0));
   }
@@ -48,6 +45,10 @@ export class SelccresmPage implements OnInit {
     this.total = this.habitacionesSeleccionadas.reduce((sum, habitacion) => {
       return sum + (this.esPremium(habitacion) ? this.PRECIO_PREMIUM : this.PRECIO_TURISTA);
     }, 0);
+  }
+
+  myBackButton() {
+    this.location.back();
   }
 
   navegarALogin() {
