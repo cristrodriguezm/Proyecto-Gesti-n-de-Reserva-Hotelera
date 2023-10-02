@@ -19,18 +19,19 @@
         <ng-template #elseBlocc>30.000</ng-template> por noche.</p>
 
     </ion-row>
-    <ion-row class="habitacionCatalogoFotos ion-text-center marginbottom">
-      <span *ngIf="esPremium(habit); else elseBlockk">
-        <ion-img src="../../assets/images/premiumhabts/1.jpg" alt="Habitación Premium" ionImgDidLoad ></ion-img>
-        <ion-img src="../../assets/images/premiumhabts/2.jpg" alt="Habitación Premium" ionImgDidLoad ></ion-img>
-        <ion-img src="../../assets/images/premiumhabts/3.jpg" alt="Habitación Premium" ionImgDidLoad ></ion-img>
-      </span>
-      <ng-template #elseBlockk>
-        <ion-img src="../../assets/images/turistahabts/1.jpg" alt="Habitación Turista" ionImgDidLoad ></ion-img>
-        <ion-img src="../../assets/images/turistahabts/2.jpg" alt="Habitación Turista" ionImgDidLoad ></ion-img>
-        <ion-img src="../../assets/images/turistahabts/3.jpg" alt="Habitación Turista" ionImgDidLoad ></ion-img>
-      </ng-template>
+    <ion-row class="habitacionCatalogoFotos ion-text-center marginbottom" *ngIf="esPremium(habit); else elseBlockk">
+      <ion-img src="../../assets/images/premiumhabts/1.jpg" alt="Habitación Premium" ionImgDidLoad ></ion-img>
+      <ion-img src="../../assets/images/premiumhabts/2.jpg" alt="Habitación Premium" ionImgDidLoad ></ion-img>
+      <ion-img src="../../assets/images/premiumhabts/3.jpg" alt="Habitación Premium" ionImgDidLoad ></ion-img>
     </ion-row>
+
+      <ng-template #elseBlockk>
+        <ion-row class="habitacionCatalogoFotos ion-text-center marginbottom">
+          <ion-img src="../../assets/images/turistahabts/1.jpg" alt="Habitación Turista" ionImgDidLoad ></ion-img>
+          <ion-img src="../../assets/images/turistahabts/2.jpg" alt="Habitación Turista" ionImgDidLoad ></ion-img>
+          <ion-img src="../../assets/images/turistahabts/3.jpg" alt="Habitación Turista" ionImgDidLoad ></ion-img>
+        </ion-row>
+      </ng-template>
 
     <ion-row id="habitacionCatalogoBotones">
       <ion-col class="ion-padding ion-text-center"><ion-button (click)="myBackButton()" size="large">Volver</ion-button></ion-col>

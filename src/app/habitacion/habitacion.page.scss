@@ -4,8 +4,6 @@ ion-list, ion-text, ion-item, ion-content, p, h1, h2, h3, h4, h5 {
     --background: none !important;
 }
 
-
-
 ion-content {
     color: #000;
     background: url('../../assets/images/background_a.png') center center no-repeat;
@@ -46,7 +44,7 @@ ion-row.habitacionCatalogoFotos {
 
 
 ion-row.habitacionCatalogoFotos ion-img {
-    margin: 34px 0;
+    margin: 0.65em 0;
     box-shadow: 0 13px 34px 8px rgba(0, 0, 0, 0.5), 0 3px 8px 2px rgba(0, 0, 0, 0.3);
     --border-radius: 8px;
 }
