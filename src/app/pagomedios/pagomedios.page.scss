@@ -31,7 +31,7 @@ ion-row#pagoMedioTitulo h1.topTitle {
     margin-right: auto;
 }
 
-ion-row#pagoMedioMedios ion-item {
+ion-row.pagoMedioMedios ion-item {
     margin: 21px;
     padding: 55px 21px;
     background: rgba(255, 255, 255, 0.4);
@@ -41,13 +41,13 @@ ion-row#pagoMedioMedios ion-item {
     box-shadow: 0 13px 34px 8px rgba(0, 0, 0, 0.2), 0 3px 8px 2px rgba(0, 0, 0, 0.3);
 }
 
-ion-row#pagoMedioMedios ion-item:hover {
+ion-row.pagoMedioMedios ion-item:hover {
     color: rgba(0, 0, 0, 1);
     background: rgba(255, 255, 255, 0.6);
     box-shadow: 0 13px 34px 34px rgba(0, 0, 0, 0.2), 0 3px 8px 2px rgba(0, 0, 0, 0.3);
 }
 
-ion-row#pagoMedioMedios > ion-item > ion-title  {
+ion-row.pagoMedioMedios > ion-item > ion-title  {
     margin: auto;
     padding: 0;
     margin: 0;
@@ -55,7 +55,7 @@ ion-row#pagoMedioMedios > ion-item > ion-title  {
     font-size: 2rem;
 }
 
-ion-row#pagoMedioMedios > ion-item > ion-img  {
+ion-row.pagoMedioMedios > ion-item > ion-img  {
     margin: auto;
     padding: 0;
     margin: 0;

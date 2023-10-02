@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Location } from "@angular/common";
+import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-pagoresumen',
@@ -13,12 +15,19 @@ export class PagoresumenPage implements OnInit {
   PRECIO_PREMIUM: number = 45000;
   total: number = 0;
 
-  constructor( private router: Router, private route: ActivatedRoute) { }
+  fechaInicio: Date | null = null;
+  fechaFin: Date | null = null;
+
+  constructor( private route: ActivatedRoute, private location: Location, private router: Router) { }
 
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
       this.habitacionesSeleccionadas = JSON.parse(params['habitaciones']);
       this.calcularTotal();
+      if(params['fechaInicio'] && params['fechaFin']) {
+          this.fechaInicio = new Date(JSON.parse(params['fechaInicio']));
+          this.fechaFin = new Date(JSON.parse(params['fechaFin']));
+      }
     });
   }
 
@@ -31,5 +40,6 @@ export class PagoresumenPage implements OnInit {
       return sum + (this.esPremium(habitacion) ? this.PRECIO_PREMIUM : this.PRECIO_TURISTA);
     }, 0);
   }
+
 
 }

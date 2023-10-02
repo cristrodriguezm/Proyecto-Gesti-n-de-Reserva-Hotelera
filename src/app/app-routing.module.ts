@@ -36,10 +36,6 @@ const routes: Routes = [
     loadChildren: () => import('./habitsreserva/habitsreserva.module').then( m => m.HabitsreservaPageModule)
   },
   {
-    path: 'pagomedioselcc',
-    loadChildren: () => import('./pagomedioselcc/pagomedioselcc.module').then( m => m.PagomedioselccPageModule)
-  },
-  {
     path: 'pagoresumen',
     loadChildren: () => import('./pagoresumen/pagoresumen.module').then( m => m.PagoresumenPageModule)
   },
@@ -98,6 +94,10 @@ const routes: Routes = [
   {
     path: 'reservalogin',
     loadChildren: () => import('./reservalogin/reservalogin.module').then( m => m.ReservaloginPageModule)
+  },
+  {
+    path: 'pagomedios',
+    loadChildren: () => import('./pagomedios/pagomedios.module').then( m => m.PagomediosPageModule)
   },
 ];
 

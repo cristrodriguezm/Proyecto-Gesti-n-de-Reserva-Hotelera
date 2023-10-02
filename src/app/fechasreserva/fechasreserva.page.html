@@ -27,7 +27,7 @@
     </ion-row>
 
     <ion-row class="fechasReservaBotones">
-      <ion-col class="ion-padding ion-text-center"><ion-button [routerLink]="['/habitsreserva']" class="primarioBoton" size="large">Seleccionar</ion-button></ion-col>
+      <ion-col class="ion-padding ion-text-center"><ion-button [routerLink]="['/habitsreserva']" (click)="navegarAHabitacionesSeleccion()" size="large">Seleccionar</ion-button></ion-col>
     </ion-row>
     <ion-row class="fechasReservaBotones">
       <ion-col class="ion-padding ion-text-center"><ion-button [routerLink]="['/portada']" size="large">Atrás</ion-button></ion-col>

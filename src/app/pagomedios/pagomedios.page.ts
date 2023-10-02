@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from "@angular/common";
-import { ActivatedRoute, Router } from '@angular/router';
-
+import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-reservalogin',
-  templateUrl: './reservalogin.page.html',
-  styleUrls: ['./reservalogin.page.scss'],
+  selector: 'app-pagomedios',
+  templateUrl: './pagomedios.page.html',
+  styleUrls: ['./pagomedios.page.scss'],
 })
-export class ReservaloginPage implements OnInit {
+export class PagomediosPage implements OnInit {
 
   habitacionesSeleccionadas: string[] = [];
   PRECIO_TURISTA: number = 30000;
@@ -31,10 +31,6 @@ export class ReservaloginPage implements OnInit {
     });
   }
 
-  myBackButton(){
-    this.location.back();
-  }
-
   esPremium(habitacion: string): boolean {
     return ['F', 'G'].includes(habitacion.charAt(0));
   }
@@ -45,9 +41,8 @@ export class ReservaloginPage implements OnInit {
     }, 0);
   }
 
-
-  navegarAPagoMedios() {
-    this.router.navigate(['/pagomedios'], { queryParams: { habitaciones: JSON.stringify(this.habitacionesSeleccionadas), fechaInicio: JSON.stringify(this.fechaInicio), fechaFin: JSON.stringify(this.fechaFin) } });
+  navegarAPagoResumen() {
+    this.router.navigate(['/pagoresumen'], { queryParams: { habitaciones: JSON.stringify(this.habitacionesSeleccionadas), fechaInicio: JSON.stringify(this.fechaInicio), fechaFin: JSON.stringify(this.fechaFin) } });
   }
 
 }

@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { PagomedioselccPageRoutingModule } from './pagomedioselcc-routing.module';
+import { PagomediosPageRoutingModule } from './pagomedios-routing.module';
 
-import { PagomedioselccPage } from './pagomedioselcc.page';
+import { PagomediosPage } from './pagomedios.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    PagomedioselccPageRoutingModule
+    PagomediosPageRoutingModule
   ],
-  declarations: [PagomedioselccPage]
+  declarations: [PagomediosPage]
 })
-export class PagomedioselccPageModule {}
+export class PagomediosPageModule {}

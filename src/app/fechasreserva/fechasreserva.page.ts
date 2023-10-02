@@ -32,7 +32,9 @@ export class FechasreservaPage implements OnInit {
   deseleccionar() {
     this.calendarioService.deseleccionarRango();
   }
+  
   navegarAHabitacionesSeleccion() {
     this.router.navigate(['/habitsreserva'], { queryParams: { fechaInicio: JSON.stringify(this.fechaInicioRango), fechaFin: JSON.stringify(this.fechaFinRango) } });
+//    console.log('Enviando fechas:', this.fechaInicioRango, this.fechaFinRango);
   }
 }

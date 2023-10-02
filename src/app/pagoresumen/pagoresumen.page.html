@@ -11,7 +11,7 @@
         <ng-container *ngFor="let habit of habitacionesSeleccionadas">
           <li>
             <p>
-              Tres noches desde abril 23 de 2023 en habitación 
+              Desde {{ fechaInicio | date:'mediumDate' }} hasta {{ fechaFin | date:'mediumDate' }} en habitación 
               <span *ngIf="esPremium(habit); else elseBlock"><strong>Premium número {{ habit }}</strong> por $ 45.000</span>
               <ng-template #elseBlock><span><strong>Turista número {{ habit }}</strong> por $ 30.000</span></ng-template>.
             </p>
@@ -19,7 +19,7 @@
         </ng-container>
         <li>
           <p>
-            Suma por habitaciones reservadas $ {{ total }}.
+            Pago total efectuado $ {{ total }}.
           </p>
         </li>
       </ol>
