@@ -7,19 +7,6 @@
     </ion-row>
 
     <ion-row class="pagoMedioMedios ion-justify-content-center marginbottom">
-      
-      <ng-container *ngFor="let habit of habitacionesSeleccionadas">
-       
-                  <p>
-                    Desde {{ fechaInicio | date:'mediumDate' }} hasta {{ fechaFin | date:'mediumDate' }} en habitación 
-                    <span *ngIf="esPremium(habit); else elseBlock"><strong>Premium número {{ habit }}</strong> por $ 45.000</span>
-                    <ng-template #elseBlock><span><strong>Turista número {{ habit }}</strong> por $ 30.000</span></ng-template>.
-                  </p>
-        
-              </ng-container>
-          </ion-row>
-  
-    <ion-row class="pagoMedioMedios ion-justify-content-center marginbottom">
 
         <ion-item lines="none" class="ion-text-center"><ion-title (click)="navegarAPagoResumen()" size="large">Tarjeta de<br/>crédito</ion-title></ion-item>
         <ion-item lines="none" class="ion-text-center"><ion-title (click)="navegarAPagoResumen()" size="large">Billetera<br/>electrónica</ion-title></ion-item>
