@@ -11,10 +11,11 @@
             <p>
               {{ diferenciaEnDias }} días desde {{ fechaInicio | date:'mediumDate' }} hasta {{ fechaFin | date:'mediumDate' }} en habitación 
               <span *ngIf="esPremium(habit); else elseBlock"><strong>Premium número {{ habit }}</strong> por $ {{ diferenciaEnDias * 45000 }}</span>
-              <ng-template #elseBlock><span><strong>Turista número {{ habit }}</strong> por $ {{ diferenciaEnDias * 30000 }}</span></ng-template>
+              <ng-template #elseBlock><strong>Turista número {{ habit }}</strong> por $ {{ diferenciaEnDias * 30000 }}</ng-template>
             </p>
             <p>
-              <ion-button>Ver catálogo de habitación</ion-button>
+              <ion-button *ngIf="esPremium(habit); else elseBlockk" (click)="navegarAHabitacion('Premium número ' + habit)">Ver catálogo de habitación</ion-button>
+              <ng-template #elseBlockk><ion-button (click)="navegarAHabitacion('Turista número ' + habit)">Ver catálogo de habitación</ion-button></ng-template>
             </p>
           </li>
         </ng-container>

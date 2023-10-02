@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from "@angular/common";
-import { ActivatedRoute, Router, NavigationExtras } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-habitacion',
@@ -9,14 +10,16 @@ import { ActivatedRoute, Router, NavigationExtras } from '@angular/router';
 })
 export class HabitacionPage implements OnInit {
 
-  data: string = "";
+  habit: string = '';
 
-  constructor( private location: Location, private activateroute: ActivatedRoute, private router: Router) {
-    this.activateroute.queryParams.subscribe(params => {
-      if(this.router.getCurrentNavigation()?.extras.state) this.data = this.router.getCurrentNavigation()?.extras?.state?.['user']; }); }
+  constructor( private location: Location, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
+    this.route.queryParams.subscribe(params => {
+      this.habit = JSON.parse(params['habit']);
+    });
   }
+
   myBackButton(){
     this.location.back();
   }

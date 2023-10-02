@@ -21,7 +21,7 @@ export class SelccresmPage implements OnInit {
   fechaInicio: Date | null = null;
   fechaFin: Date | null = null;
 
-  constructor( private route: ActivatedRoute, private location: Location, private router: Router) { }
+  constructor( private route: ActivatedRoute, private location: Location, private router: Router ) { }
 
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
@@ -52,6 +52,10 @@ export class SelccresmPage implements OnInit {
 
   navegarALogin() {
     this.router.navigate(['/reservalogin'], { queryParams: { habitaciones: JSON.stringify(this.habitacionesSeleccionadas), fechaInicio: JSON.stringify(this.fechaInicio), fechaFin: JSON.stringify(this.fechaFin) } });
+  }
+
+  navegarAHabitacion(habit: string) {
+    this.router.navigate(['/habitacion'], { queryParams: { habit: JSON.stringify(habit) } });
   }
 
 }
