@@ -35,6 +35,7 @@ export class HabtcnescatalogoPage implements OnInit {
   myBackButton(){
     this.location.back();
   }
+  
   navegarAHabitacion(habit: string) {
     this.router.navigate(['/habitacion'], { queryParams: { habit: JSON.stringify(habit) } });
   }
