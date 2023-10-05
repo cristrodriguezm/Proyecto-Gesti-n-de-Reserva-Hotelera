@@ -2,6 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Location } from "@angular/common";
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { map } from 'rxjs/operators';
+
+
+
 
 
 @Component({
@@ -12,9 +17,7 @@ import { Router } from '@angular/router';
 export class SelccresmPage implements OnInit {
 
   habitacionesSeleccionadas: string[] = [];
-  PRECIO_TURISTA: number = 30000;
-  PRECIO_PREMIUM: number = 45000;
-  total: number = 0;
+  totalSum: number = 0;
 
   fechaInicio: Date | null = null;
   fechaFin: Date | null = null;
@@ -22,12 +25,14 @@ export class SelccresmPage implements OnInit {
   diferenciaEnMilisegundos: number = 0;
   diferenciaEnDias: number = 0;
 
-  constructor( private route: ActivatedRoute, private location: Location, private router: Router ) { }
+  jsonHabitacionFicha: any = [];
+
+  constructor( private route: ActivatedRoute, private location: Location, private router: Router, private http: HttpClient ) { }
 
   ngOnInit() {
+
     this.route.queryParams.subscribe(params => {
       this.habitacionesSeleccionadas = JSON.parse(params['habitaciones']);
-      this.calcularTotal();
       if(params['fechaInicio'] && params['fechaFin']) {
           this.fechaInicio = new Date(JSON.parse(params['fechaInicio']));
           this.fechaFin = new Date(JSON.parse(params['fechaFin']));
@@ -35,16 +40,30 @@ export class SelccresmPage implements OnInit {
           this.diferenciaEnDias = Math.floor(this.diferenciaEnMilisegundos / (1000 * 3600 * 24));
       }
     });
+
+    this.habitacionesLlamado().subscribe(res=>{ this.jsonHabitacionFicha = res; });
+
   }
 
-  esPremium(habitacion: string): boolean {
-    return ['F', 'G'].includes(habitacion.charAt(0));
+  ngAfterContentChecked() {
+    this.totalSumCalc();
   }
 
-  calcularTotal() {
-    this.total = this.habitacionesSeleccionadas.reduce((sum, habitacion) => {
-      return sum + (this.esPremium(habitacion) ? this.PRECIO_PREMIUM : this.PRECIO_TURISTA);
-    }, 0);
+  habitacionesLlamado(){
+    return this.http
+    .get("assets/json/habitaciones.json")
+    .pipe(map((res:any) => {return res.pisos;}))
+  }
+
+  pisoNumeroSeparador(habtcn: string): { piso: string, numero: string } {
+    const piso = habtcn.charAt(0);
+    const numero = habtcn.substring(1);
+    return { piso, numero };
+  }
+
+  totalSumCalc() {
+    this.totalSum = 0;
+    for (let habit of this.habitacionesSeleccionadas) for (let a of this.jsonHabitacionFicha) if ( a.piso === this.pisoNumeroSeparador(habit).piso) for (let b of a.rooms) if (b.numero === this.pisoNumeroSeparador(habit).numero) this.totalSum = this.totalSum+ (this.diferenciaEnDias * b.precio);
   }
 
   myBackButton() {
@@ -58,5 +77,6 @@ export class SelccresmPage implements OnInit {
   navegarAHabitacion(habit: string) {
     this.router.navigate(['/habitacion'], { queryParams: { habit: JSON.stringify(habit) } });
   }
+
 
 }

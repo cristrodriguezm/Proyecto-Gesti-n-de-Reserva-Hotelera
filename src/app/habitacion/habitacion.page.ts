@@ -2,30 +2,54 @@ import { Component, OnInit } from '@angular/core';
 import { Location } from "@angular/common";
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { map } from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-habitacion',
   templateUrl: './habitacion.page.html',
   styleUrls: ['./habitacion.page.scss'],
 })
+
 export class HabitacionPage implements OnInit {
 
-  habit: string = '';
+  habitn: string = '';
+  habitPiso: string = '';
+  habitNumero: string = '';
 
-  constructor( private location: Location, private route: ActivatedRoute, private router: Router) { }
+  jsonHabitacionFicha: any = [];
+  jsonHabitacionPiso: any = [];
+
+  constructor( private location: Location, private route: ActivatedRoute, private router: Router, private http: HttpClient) { }
 
   ngOnInit() {
-    this.route.queryParams.subscribe(params => {
-      this.habit = JSON.parse(params['habit']);
-    });
+    this.route.queryParams.subscribe(params => { this.habitn = JSON.parse(params['habit']); });
+    this.habitacionesLlamado().subscribe(res=>{ this.jsonHabitacionFicha = res; });
+    [this.habitPiso,this.habitNumero] = this.habitn.split('');
   }
 
   esPremium(habitacion: string): boolean {
     return ['F', 'G'].includes(habitacion.charAt(0));
   }
 
+  getThePiso() {
+    for (var a = 0; a < this.jsonHabitacionFicha.length; a++) if (this.jsonHabitacionFicha[a].piso === this.habitPiso  ) this.jsonHabitacionFicha[a] = this.jsonHabitacionPiso;
+  }
+
   myBackButton(){
     this.location.back();
   }
 
+  habitacionesLlamado(){
+    return this.http
+    .get("assets/json/habitaciones.json")
+    .pipe(map((res:any) => {return res.pisos;}))
+  }
+
+  removeLeadingZeros(input: string): string {
+    const result = input.replace(/^0+/, '');
+    return result;
+  }
+  
 }

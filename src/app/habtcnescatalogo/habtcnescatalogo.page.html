@@ -1,25 +1,18 @@
 <ion-content [fullscreen]="true">
   <ion-grid class="ion-padding">
+
     <ion-row id="habitacionesReservaTitulo" class="ion-text-center marginbottom">
       <h1 class="topTitle">Catálogo de <wbr/>habitaciones</h1>
     </ion-row>
 
-    <div *ngFor="let piso of pisoLetras.slice().reverse(); let i = index">
-
-      <ion-row class="ion-text-center piso-title-row">
-          <h2>—&nbsp; Piso {{ pisoLetras.length - i }} · <span>Habitaciones {{ esTurista(piso) ? 'Turista' : 'Premium' }}</span> &nbsp;—</h2>
-      </ion-row>
-  
-      <ion-row class="ion-justify-content-center floor">
-          <ng-container class="ion-justify-content-center" *ngFor="let habitacion of habitaciones | keyvalue">
-
-              <div class="room habitacion-box" (click)="navegarAHabitacion( habitacion.key )" [class]="habitacion.value" *ngIf="isString(habitacion.key) && habitacion.key.startsWith(piso)">{{ habitacion.key }}</div>
-
-          </ng-container>
-      </ion-row>
-  
-  </div>
-  
+  <ng-container *ngFor=" let a of jsonHabitacionFicha.slice().reverse()">
+    <ion-row class=" ion-text-center piso-title-row"><h2>— Piso {{ a.pisonumero }} · <span>Habitaciones {{ a.habitacionestipo }}</span> —</h2></ion-row>
+    <ion-row class=" ion-justify-content-center floor">
+      <ng-container *ngFor=" let b of a.rooms">
+        <div class="room habitacion-box" [class]="b.estado" (click)="navegarAHabitacion( a.piso + b.numero )" >{{ a.piso + b.numero }}</div>
+      </ng-container>
+    </ion-row>
+  </ng-container>
 
     <ion-row class="habitacionesReservaBotones margintop">
       <ion-col class="ion-padding ion-text-center">
@@ -30,5 +23,6 @@
     <ion-row id="habitacionesReservaPie" class="ion-text-center">
       <ion-img src="../../assets/images/pacific reef titulo .png" alt="Hotel Título"></ion-img>
     </ion-row>
+
   </ion-grid>
 </ion-content>

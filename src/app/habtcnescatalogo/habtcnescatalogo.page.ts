@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { HotelService } from '../hotel.service';
 import { Location } from "@angular/common";
-import { Router, NavigationExtras } from '@angular/router';
+import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-habtcnescatalogo',
@@ -9,29 +10,21 @@ import { Router, NavigationExtras } from '@angular/router';
   styleUrls: ['./habtcnescatalogo.page.scss'],
 })
 export class HabtcnescatalogoPage implements OnInit {
-  habitaciones: any = {};
-  pisoLetras: string[] = [ 'A', 'B', 'C', 'D', 'E', 'F', 'G'];
 
-  habitacionNumero: any = "";
+  jsonHabitacionFicha: any = [];
 
-  isString(value: any): value is string {
-    return typeof value === 'string';
-  }
-  
-  constructor(private hotelService: HotelService, private location: Location, private router: Router) { }
+  constructor( private location: Location, private router: Router, private http: HttpClient) { }
 
   ngOnInit() {
-    this.habitaciones = this.hotelService.getHabitaciones();
+    this.habitacionesLlamado().subscribe(res=>{ this.jsonHabitacionFicha = res; });
   }
 
-  seleccionarHabitacion(id: string) {
-    this.hotelService.seleccionarHabitacion(id);
+  habitacionesLlamado(){
+    return this.http
+    .get("assets/json/habitaciones.json")
+    .pipe(map((res:any) => {return res.pisos;}))
   }
 
-  esTurista(piso: string): boolean {
-    return ['A', 'B', 'C', 'D', 'E'].includes(piso);
-  }
-  
   myBackButton(){
     this.location.back();
   }

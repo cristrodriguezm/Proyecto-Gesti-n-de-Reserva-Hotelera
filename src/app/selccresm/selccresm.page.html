@@ -7,28 +7,36 @@
     <ion-row id="seleccionResumenLista" class="ion-text-center marginbottom">
       <ol>
         <ng-container *ngFor="let habit of habitacionesSeleccionadas">
-          <li>
-            <p>
-              {{ diferenciaEnDias }} días desde {{ fechaInicio | date:'mediumDate' }} hasta {{ fechaFin | date:'mediumDate' }} en habitación 
-              <span *ngIf="esPremium(habit); else elseBlock"><strong>Premium número {{ habit }}</strong> por $ {{ diferenciaEnDias * 45000 }}</span>
-              <ng-template #elseBlock><strong>Turista número {{ habit }}</strong> por $ {{ diferenciaEnDias * 30000 }}</ng-template>
-            </p>
-            <p>
-              <ion-button (click)="navegarAHabitacion(habit)">Ver catálogo de habitación</ion-button>
-            </p>
-          </li>
+         <ng-container *ngFor=" let a of jsonHabitacionFicha">
+           <ng-container *ngIf="a.piso === pisoNumeroSeparador(habit).piso">
+             <ng-container *ngFor=" let b of a.rooms">
+               <ng-container *ngIf="b.numero === pisoNumeroSeparador(habit).numero">
+                 <li>
+                   <p>
+                     {{ diferenciaEnDias }} días desde {{ fechaInicio | date:'mediumDate' }} hasta {{ fechaFin | date:'mediumDate' }} en <span class="habtTipo"><strong>habitación 
+                     {{ a.habitacionestipo }} número {{ a.piso + b.numero }}</strong></span> por {{ (diferenciaEnDias * b.precio) | currency:'$ ':'symbol':'1.0-0' }}.
+                   </p>
+                   <p>
+                     <ion-button (click)="navegarAHabitacion(a.piso + b.numero)">Ver catálogo de habitación</ion-button>
+                   </p>
+                 </li>
+               </ng-container>
+             </ng-container>
+           </ng-container>
+         </ng-container>
         </ng-container>
         <li>
           <p>
-            Suma por habitaciones reservadas $ {{ diferenciaEnDias * total }}.
+            Suma por habitaciones reservadas {{ (totalSum) | currency:'$ ':'symbol':'1.0-0' }}.
           </p>
         </li>
       </ol>
     </ion-row>
 
-  <ion-row class="seleccionResumenBotones">
+    <ion-row class="seleccionResumenBotones">
       <ion-col class="ion-padding ion-text-center"><ion-button class="primarioBoton" size="large" (click)="navegarALogin()">Credenciales Hotel</ion-button></ion-col>
     </ion-row>
+
     <ion-row class="seleccionResumenBotones">
       <ion-col class="ion-padding ion-text-center"><ion-button size="large" (click)="myBackButton()">Atrás</ion-button></ion-col>
     </ion-row>

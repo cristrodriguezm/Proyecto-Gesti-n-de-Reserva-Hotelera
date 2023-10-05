@@ -65,6 +65,9 @@ ion-row#seleccionResumenLista ol li p {
       padding: 0.2em;
       margin: 0;
 }
+ion-row#seleccionResumenLista ol li p span.habtTipo {
+    text-transform: capitalize;
+}
 ion-row#seleccionResumenLista ol li p ion-button {
 --background: #E7D0C6;
 --background-hover: #fff;

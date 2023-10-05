@@ -9,17 +9,24 @@
     <ion-row id="pagoResumenLista" class="ion-text-center marginbottom">
       <ol>
         <ng-container *ngFor="let habit of habitacionesSeleccionadas">
-          <li>
-            <p>
-              {{ diferenciaEnDias }} días desde {{ fechaInicio | date:'mediumDate' }} hasta {{ fechaFin | date:'mediumDate' }} en habitación 
-              <span *ngIf="esPremium(habit); else elseBlock"><strong>Premium número {{ habit }}</strong> por $ {{ diferenciaEnDias * 45000 }}</span>
-              <ng-template #elseBlock><strong>Turista número {{ habit }}</strong> por $ {{ diferenciaEnDias * 30000 }}</ng-template>
-            </p>
-          </li>
+         <ng-container *ngFor=" let a of jsonHabitacionFicha">
+           <ng-container *ngIf="a.piso === pisoNumeroSeparador(habit).piso">
+             <ng-container *ngFor=" let b of a.rooms">
+               <ng-container *ngIf="b.numero === pisoNumeroSeparador(habit).numero">
+                 <li>
+                   <p>
+                     {{ diferenciaEnDias }} días desde {{ fechaInicio | date:'mediumDate' }} hasta {{ fechaFin | date:'mediumDate' }} en <span class="habtTipo"><strong>habitación 
+                     {{ a.habitacionestipo }} número {{ a.piso + b.numero }}</strong></span> por {{ (diferenciaEnDias * b.precio) | currency:'$ ':'symbol':'1.0-0' }}.
+                   </p>
+                 </li>
+               </ng-container>
+             </ng-container>
+           </ng-container>
+         </ng-container>
         </ng-container>
         <li>
           <p>
-            Suma por habitaciones reservadas $ {{ diferenciaEnDias * total }}.
+            Pago realizado por habitaciones reservadas {{ (totalSum) | currency:'$ ':'symbol':'1.0-0' }}.
           </p>
         </li>
       </ol>

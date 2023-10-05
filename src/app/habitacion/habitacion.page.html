@@ -2,36 +2,29 @@
 <ion-content [fullscreen]="true">
 
   <ion-grid  class="ion-padding">
-    <ion-row id="habitacionCatalogoTitulo" class="ion-text-center marginbottom">
 
-      <h1 class="topTitle">
-        <span *ngIf="esPremium(habit); else elseBlock">Habitación <wbr/>Premium número {{ habit }}</span>
-        <ng-template #elseBlock>Habitación <wbr/>Turista número {{ habit }}</ng-template>
-      </h1>
-    </ion-row>
+    <ng-container *ngFor=" let a of jsonHabitacionFicha">
+      <ng-container *ngIf="a.piso === habitPiso">
+        <ng-container *ngFor=" let b of a.rooms">
+          <ng-container *ngIf="b.numero === habitNumero">
 
-    <ion-row class="habitacionCatalogoDescripcion ion-text-center borderTop">
+            <ion-row id="habitacionCatalogoTitulo" class="ion-text-center marginbottom">
+              <h1 class="topTitle">Habitación <wbr/> {{ a.habitacionestipo }} número {{ a.piso + b.numero }}</h1>
+            </ion-row>
 
-      <p class="topP"><span *ngIf="esPremium(habit); else elseBlockx">Descripción habitación Premium</span>
-        <ng-template #elseBlockx>Descripción habitación Turista</ng-template>.</p>
+            <ion-row class="habitacionCatalogoDescripcion ion-text-center borderTop">
+              <p class="topP">La habitación se encuentra {{ b.estado }} y tiene un precio de {{ (b.precio) | currency:'$ ':'symbol':'1.0-0' }} por noche.</p>
+              <p> {{ b.descripcion }} adicional.</p>
+            </ion-row>
 
-      <p>$ <span *ngIf="esPremium(habit); else elseBlocc">45.000</span>
-        <ng-template #elseBlocc>30.000</ng-template> por noche.</p>
+            <ion-row class="habitacionCatalogoFotos ion-text-center marginbottom">
+              <ion-img *ngFor=" let c of b.fotografiaslista" src="{{  '../../assets/images/' + a.habitacionestipo + 'habts/' + c }}" alt=" {{ 'Habitación' + a.habitacionestipo }} " ionImgDidLoad ></ion-img>
+            </ion-row>
 
-    </ion-row>
-    <ion-row class="habitacionCatalogoFotos ion-text-center marginbottom" *ngIf="esPremium(habit); else elseBlockk">
-      <ion-img src="../../assets/images/premiumhabts/1.jpg" alt="Habitación Premium" ionImgDidLoad ></ion-img>
-      <ion-img src="../../assets/images/premiumhabts/2.jpg" alt="Habitación Premium" ionImgDidLoad ></ion-img>
-      <ion-img src="../../assets/images/premiumhabts/3.jpg" alt="Habitación Premium" ionImgDidLoad ></ion-img>
-    </ion-row>
-
-      <ng-template #elseBlockk>
-        <ion-row class="habitacionCatalogoFotos ion-text-center marginbottom">
-          <ion-img src="../../assets/images/turistahabts/1.jpg" alt="Habitación Turista" ionImgDidLoad ></ion-img>
-          <ion-img src="../../assets/images/turistahabts/2.jpg" alt="Habitación Turista" ionImgDidLoad ></ion-img>
-          <ion-img src="../../assets/images/turistahabts/3.jpg" alt="Habitación Turista" ionImgDidLoad ></ion-img>
-        </ion-row>
-      </ng-template>
+          </ng-container>
+        </ng-container>
+      </ng-container>
+    </ng-container>
 
     <ion-row id="habitacionCatalogoBotones">
       <ion-col class="ion-padding ion-text-center"><ion-button (click)="myBackButton()" size="large">Volver</ion-button></ion-col>
