@@ -56,9 +56,7 @@ export class SelccresmPage implements OnInit {
   }
 
   pisoNumeroSeparador(habtcn: string): { piso: string, numero: string } {
-    const piso = habtcn.charAt(0);
-    const numero = habtcn.substring(1);
-    return { piso, numero };
+    return { piso: habtcn.charAt(0), numero: habtcn.substring(1) };
   }
 
   totalSumCalc() {

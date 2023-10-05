@@ -29,14 +29,6 @@ export class HabitacionPage implements OnInit {
     [this.habitPiso,this.habitNumero] = this.habitn.split('');
   }
 
-  esPremium(habitacion: string): boolean {
-    return ['F', 'G'].includes(habitacion.charAt(0));
-  }
-
-  getThePiso() {
-    for (var a = 0; a < this.jsonHabitacionFicha.length; a++) if (this.jsonHabitacionFicha[a].piso === this.habitPiso  ) this.jsonHabitacionFicha[a] = this.jsonHabitacionPiso;
-  }
-
   myBackButton(){
     this.location.back();
   }
