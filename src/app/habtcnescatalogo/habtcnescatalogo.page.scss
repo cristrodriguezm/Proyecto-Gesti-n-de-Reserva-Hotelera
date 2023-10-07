@@ -31,7 +31,7 @@ ion-list, ion-text, ion-item, ion-content, p, h1, h2, h3, h4, h5 {
   }
   
   ion-row.habitacionesReservaBotones ion-button {
-    --background: #E7D0C6;
+    --background: rgba(231, 208, 198, 0.5);
     --background-hover: #fff;
     --background-activated: #694f44;
     --background-focused: #694f44;
@@ -61,14 +61,11 @@ ion-list, ion-text, ion-item, ion-content, p, h1, h2, h3, h4, h5 {
     margin-top: 4em !important;
   }
   
-  /* Habitaciones Selector Inicio */
+  /* Habitaciones Selector Inicio 
   
   .disponible {
-    background-color: rgba(255, 255, 255, 0.2);
-    color: black;
-    border-color: #fff;
   }
-  
+  */
   .ocupada {
     background-color: rgba(0, 0, 0, 0.5);
     color: black;
@@ -117,6 +114,9 @@ ion-list, ion-text, ion-item, ion-content, p, h1, h2, h3, h4, h5 {
     justify-content: center;
     cursor: pointer;
     box-shadow: 0 13px 34px 8px rgba(0, 0, 0, 0.2), 0 3px 8px 2px rgba(0, 0, 0, 0.3);
+    background-color: rgba(255, 255, 255, 0.2);
+    color: black;
+    border-color: #fff;
   }
 
 
